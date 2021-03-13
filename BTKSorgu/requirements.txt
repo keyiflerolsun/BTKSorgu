@@ -1,0 +1,4 @@
+requests
+parsel
+Pillow
+pytesseract
