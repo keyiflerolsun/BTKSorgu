@@ -43,6 +43,21 @@ print(bitir-basla)
     # » 8.352766513824463
 ```
 
+## 🔖 Program Akış Şeması
+
+1. *Oturum Başlat,*
+2. *[https://internet2.btk.gov.tr](https://internet2.btk.gov.tr/) adresine yönlendirmeleri kabul ederek git: kurabiyeleri ye,*
+3. *Dönen kaynak kodundan doğrulama resmini indir,*
+4. *Doğrulama resmini OCR ile harflere dönüştür, boşlukları sil,*
+5. *Sorgu adresini okuduğun doğrulama koduyla birlikte post at,*
+6. *Dönen yanıtı ayrıştırıp edip geri döndür..*
+
+> Bu programın yazılma ve açık kaynak kodlu olarak paylaşılma amacı: _Tarayıcı Otomasyonlarının sebep olduğu  **gereksiz kaynak tüketimi** ve  **zaman kaybının**  önüne geçmeye teşvik etmektir…_
+
+> Tarayıcı Otomasyonu : [_Selenium IDE_](https://www.selenium.dev/selenium-ide/) _**-**_ [_Katalon Automation Recorder_](https://www.katalon.com/resources-center/blog/katalon-automation-recorder/) _**-**_ [_BrowserAutomationStudio_](https://bablosoft.com/shop/BrowserAutomationStudio)
+
+> Karşılaştırması : **[Selenium VS Requests](https://www.r10.net/off-topic/2751412-selenium-vs-requests.html)**
+
 ## 📝 Proje İlerlemesi
 
 - ✅ **[@raifpy](https://github.com/raifpy)** *tarafından kodlanmış projenin hantal bir bileşeni itinayla `dızz 🐍`'lanmıştır..*
