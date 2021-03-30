@@ -19,6 +19,7 @@ class BTKSorgu(object):
             {domain}, {karar} Karar Bulunamadı.
     """
     def __init__(self, sorgu_url:str, arka_plan:bool=False):
+        "Karar Döndürür"
         self.arka_plan     = arka_plan
         self.ana_sayfa     = "https://internet2.btk.gov.tr"
         self.sorgu_sayfasi = "https://internet2.btk.gov.tr/sitesorgu/"
