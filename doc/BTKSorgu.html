@@ -25,6 +25,21 @@
                         </a>
 
 
+                    <h2>Contents</h2>
+                    <ul>
+  <li><a href="#btksorgu">🔍 BTKSorgu</a>
+  <ul>
+    <li><a href="#kurulum">🚀 Kurulum</a></li>
+    <li><a href="#kullanm">📝 Kullanım</a></li>
+    <li><a href="#program-aks-semas">🔖 Program Akış Şeması</a></li>
+    <li><a href="#proje-ilerlemesi">📝 Proje İlerlemesi</a></li>
+    <li><a href="#telif-hakk-ve-lisans">🌐 Telif Hakkı ve Lisans</a></li>
+    <li><a href="#iletisim">♻️ İletişim</a></li>
+    <li><a href="#bags-yap">💸 Bağış Yap</a></li>
+  </ul></li>
+  <li><a href="#-1">#</a></li>
+</ul>
+
 
                     <h2>Submodules</h2>
                     <ul>
@@ -44,18 +59,194 @@
                     <h1 class="modulename">
 BTKSorgu    </h1>
 
-                        <div class="docstring"><p>Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.</p>
+                        <div class="docstring"><h1 id="btksorgu">🔍 BTKSorgu</h1>
+
+<p><a href="https://www.codacy.com/gh/keyiflerolsun/BTKSorgu/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=keyiflerolsun/BTKSorgu&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/bc0a52a9b57f4c29930cbd6c796f9a8b" alt="Codacy Badge" /></a> <img src="https://img.shields.io/github/repo-size/keyiflerolsun/BTKSorgu" alt="Repo Boyutu" /> <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/keyiflerolsun/BTKSorgu&amp;title=Profile%20Views" alt="Views" /> <a href="https://gitpod.io/#https://github.com/keyiflerolsun/BTKSorgu"><img src="https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod" alt="Gitpod ready-to-code" /></a></p>
+
+<p><img src="https://img.shields.io/pypi/pyversions/BTKSorgu" alt="PyPI - Python Version" />
+<img src="https://img.shields.io/pypi/status/BTKSorgu" alt="PyPI - Status" />
+<img src="https://img.shields.io/pypi/v/BTKSorgu" alt="PyPI" />
+<img src="https://img.shields.io/pypi/dm/BTKSorgu" alt="PyPI - Downloads" />
+<img src="https://img.shields.io/pypi/wheel/BTKSorgu" alt="PyPI - Wheel" />
+<img src="https://img.shields.io/pypi/l/BTKSorgu" alt="PyPI - License" /></p>
+
+<p><em>Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu..</em></p>
+
+<p><a href="https://www.python.org/"><img src="http://ForTheBadge.com/images/badges/made-with-python.svg" alt="forthebadge made-with-python" /></a>
+<a href="https://GitHub.com/keyiflerolsun/"><img src="http://ForTheBadge.com/images/badges/built-with-love.svg" alt="ForTheBadge built-with-love" /></a></p>
+
+<h2 id="kurulum">🚀 Kurulum</h2>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Yüklemek</span>
+pip install BTKSorgu
+
+<span class="c1"># Güncellemek</span>
+pip install -U BTKSorgu
+</code></pre></div>
+
+<h2 id="kullanm">📝 Kullanım</h2>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">BTKSorgu</span> <span class="kn">import</span> <span class="n">BTKSorgu</span>
+<span class="kn">from</span> <span class="nn">time</span>     <span class="kn">import</span> <span class="n">time</span>
+
+<span class="n">basla</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">BTKSorgu</span><span class="p">(</span><span class="s1">&#39;redtube.com&#39;</span><span class="p">))</span>
+    <span class="c1"># » redtube.com, 30/01/2008 tarihli ve 410.01.02.2008-028105 sayılı Telekomünikasyon İletişim Başkanlığı kararıyla erişime engellenmiştir.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">BTKSorgu</span><span class="p">(</span><span class="s1">&#39;kekikakademi.org&#39;</span><span class="p">))</span>
+    <span class="c1"># » Bilgi Teknolojileri ve İletişim Kurumu tarafından uygulanan bir karar bulunamadı.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">BTKSorgu</span><span class="p">(</span><span class="s1">&#39;xnxx.com&#39;</span><span class="p">))</span>
+    <span class="c1"># » xnxx.com, 23/02/2008 tarihli ve 410.01.02.2008-054003 sayılı Telekomünikasyon İletişim Başkanlığı kararıyla erişime engellenmiştir.</span>
+<span class="n">bitir</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">bitir</span><span class="o">-</span><span class="n">basla</span><span class="p">)</span>
+    <span class="c1"># » 8.352766513824463</span>
+</code></pre></div>
+
+<h2 id="program-aks-semas">🔖 Program Akış Şeması</h2>
+
+<ol>
+<li><em>Oturum Başlat,</em></li>
+<li><em><a href="https://internet2.btk.gov.tr/">https://internet2.btk.gov.tr</a> adresine yönlendirmeleri kabul ederek git: kurabiyeleri ye,</em></li>
+<li><em>Dönen kaynak kodundan doğrulama resmini indir,</em></li>
+<li><em>Doğrulama resmini OCR ile harflere dönüştür, boşlukları sil,</em></li>
+<li><em>Sorgu adresini okuduğun doğrulama koduyla birlikte post at,</em></li>
+<li><em>Dönen yanıtı ayrıştırıp edip geri döndür..</em></li>
+</ol>
+
+<blockquote>
+  <p>Bu programın yazılma ve açık kaynak kodlu olarak paylaşılma amacı: _Tarayıcı Otomasyonlarının sebep olduğu  <strong>gereksiz kaynak tüketimi</strong> ve  <strong>zaman kaybının</strong>  önüne geçmeye teşvik etmektir…_</p>
+</blockquote>
+
+<blockquote>
+  <p>Tarayıcı Otomasyonu : <a href="https://www.selenium.dev/selenium-ide/">_Selenium IDE_</a> _<strong>-</strong>_ <a href="https://www.katalon.com/resources-center/blog/katalon-automation-recorder/">_Katalon Automation Recorder_</a> _<strong>-</strong>_ <a href="https://bablosoft.com/shop/BrowserAutomationStudio">_BrowserAutomationStudio_</a></p>
+</blockquote>
+
+<blockquote>
+  <p>Karşılaştırması : <strong><a href="https://www.r10.net/off-topic/2751412-selenium-vs-requests.html">Selenium VS Requests</a></strong></p>
+</blockquote>
+
+<h2 id="proje-ilerlemesi">📝 Proje İlerlemesi</h2>
+
+<ul>
+<li>✅ <strong><a href="https://github.com/raifpy">@raifpy</a></strong> <em>tarafından kodlanmış projenin hantal bir bileşeni itinayla <code>dızz 🐍</code>'lanmıştır..</em></li>
+<li>✅ <strong>Selenium</strong> <em>bağımlılığından dolayı hantal çalışan kod yapısı tamamen ayıklanıp bütün iş</em> <code>requests</code><em>'e yaptırılıp ciddi miktarda kaynak ve zaman tasarrufu ettirilmiştir..</em></li>
+<li>✅ <em>Kolay erişilebilir olması ve ilham yaratması için</em> <strong>pypi</strong> <em>depolarına yüklenmiştir..</em></li>
+</ul>
+
+<h2 id="telif-hakk-ve-lisans">🌐 Telif Hakkı ve Lisans</h2>
+
+<ul>
+<li><em>Copyright (C) 2021 by</em> <a href="https://github.com/keyiflerolsun">keyiflerolsun</a> ❤️️</li>
+<li><a href="https://github.com/keyiflerolsun/keyifUserBot/blob/master/LICENSE">GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</a> <em>Koşullarına göre lisanslanmıştır..</em></li>
+</ul>
+
+<h2 id="iletisim">♻️ İletişim</h2>
+
+<p><em>Benimle iletişime geçmek isterseniz, <strong>Telegram</strong>'dan mesaj göndermekten çekinmeyin;</em> <a href="https://t.me/keyiflerolsun">@keyiflerolsun</a></p>
+
+<h2 id="bags-yap">💸 Bağış Yap</h2>
+
+<p><strong><a href="https://KekikAkademi.org/Kahve">☕️ Kahve Ismarla</a></strong></p>
+
+<h1 id="-1">#</h1>
+
+<blockquote>
+  <p><strong><a href="https://t.me/KekikAkademi">@KekikAkademi</a></strong> <em>için yazılmıştır..</em></p>
+</blockquote>
 </div>
 
                         <details>
             <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span><span class="s2">&quot; Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.&quot;</span>
+            <div class="codehilite"><pre><span></span><span class="sa">r</span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd"># 🔍 BTKSorgu</span>
+
+<span class="sd">[![Codacy Badge](https://app.codacy.com/project/badge/Grade/bc0a52a9b57f4c29930cbd6c796f9a8b)](https://www.codacy.com/gh/keyiflerolsun/BTKSorgu/dashboard?utm_source=github.com&amp;amp;utm_medium=referral&amp;amp;utm_content=keyiflerolsun/BTKSorgu&amp;amp;utm_campaign=Badge_Grade) ![Repo Boyutu](https://img.shields.io/github/repo-size/keyiflerolsun/BTKSorgu) ![Views](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/keyiflerolsun/BTKSorgu&amp;title=Profile%20Views) [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/keyiflerolsun/BTKSorgu)</span>
+
+<span class="sd">![PyPI - Python Version](https://img.shields.io/pypi/pyversions/BTKSorgu)</span>
+<span class="sd">![PyPI - Status](https://img.shields.io/pypi/status/BTKSorgu)</span>
+<span class="sd">![PyPI](https://img.shields.io/pypi/v/BTKSorgu)</span>
+<span class="sd">![PyPI - Downloads](https://img.shields.io/pypi/dm/BTKSorgu)</span>
+<span class="sd">![PyPI - Wheel](https://img.shields.io/pypi/wheel/BTKSorgu)</span>
+<span class="sd">![PyPI - License](https://img.shields.io/pypi/l/BTKSorgu)</span>
+
+<span class="sd">*Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu..*</span>
+
+<span class="sd">[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)</span>
+<span class="sd">[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/keyiflerolsun/)</span>
+
+<span class="sd">## 🚀 Kurulum</span>
+
+<span class="sd">```bash</span>
+<span class="sd"># Yüklemek</span>
+<span class="sd">pip install BTKSorgu</span>
+
+<span class="sd"># Güncellemek</span>
+<span class="sd">pip install -U BTKSorgu</span>
+<span class="sd">```</span>
+
+<span class="sd">## 📝 Kullanım</span>
+
+<span class="sd">```python</span>
+<span class="sd">from BTKSorgu import BTKSorgu</span>
+<span class="sd">from time     import time</span>
+
+<span class="sd">basla = time()</span>
+<span class="sd">print(BTKSorgu(&#39;redtube.com&#39;))</span>
+<span class="sd">    # » redtube.com, 30/01/2008 tarihli ve 410.01.02.2008-028105 sayılı Telekomünikasyon İletişim Başkanlığı kararıyla erişime engellenmiştir.</span>
+<span class="sd">print(BTKSorgu(&#39;kekikakademi.org&#39;))</span>
+<span class="sd">    # » Bilgi Teknolojileri ve İletişim Kurumu tarafından uygulanan bir karar bulunamadı.</span>
+<span class="sd">print(BTKSorgu(&#39;xnxx.com&#39;))</span>
+<span class="sd">    # » xnxx.com, 23/02/2008 tarihli ve 410.01.02.2008-054003 sayılı Telekomünikasyon İletişim Başkanlığı kararıyla erişime engellenmiştir.</span>
+<span class="sd">bitir = time()</span>
+
+<span class="sd">print(bitir-basla)</span>
+<span class="sd">    # » 8.352766513824463</span>
+<span class="sd">```</span>
+
+<span class="sd">## 🔖 Program Akış Şeması</span>
+
+<span class="sd">1. *Oturum Başlat,*</span>
+<span class="sd">2. *[https://internet2.btk.gov.tr](https://internet2.btk.gov.tr/) adresine yönlendirmeleri kabul ederek git: kurabiyeleri ye,*</span>
+<span class="sd">3. *Dönen kaynak kodundan doğrulama resmini indir,*</span>
+<span class="sd">4. *Doğrulama resmini OCR ile harflere dönüştür, boşlukları sil,*</span>
+<span class="sd">5. *Sorgu adresini okuduğun doğrulama koduyla birlikte post at,*</span>
+<span class="sd">6. *Dönen yanıtı ayrıştırıp edip geri döndür..*</span>
+
+<span class="sd">&gt; Bu programın yazılma ve açık kaynak kodlu olarak paylaşılma amacı: _Tarayıcı Otomasyonlarının sebep olduğu  **gereksiz kaynak tüketimi** ve  **zaman kaybının**  önüne geçmeye teşvik etmektir…_</span>
+
+<span class="sd">&gt; Tarayıcı Otomasyonu : [_Selenium IDE_](https://www.selenium.dev/selenium-ide/) _**-**_ [_Katalon Automation Recorder_](https://www.katalon.com/resources-center/blog/katalon-automation-recorder/) _**-**_ [_BrowserAutomationStudio_](https://bablosoft.com/shop/BrowserAutomationStudio)</span>
+
+<span class="sd">&gt; Karşılaştırması : **[Selenium VS Requests](https://www.r10.net/off-topic/2751412-selenium-vs-requests.html)**</span>
+
+<span class="sd">## 📝 Proje İlerlemesi</span>
+
+<span class="sd">- ✅ **[@raifpy](https://github.com/raifpy)** *tarafından kodlanmış projenin hantal bir bileşeni itinayla `dızz 🐍`&#39;lanmıştır..*</span>
+<span class="sd">- ✅ **Selenium** *bağımlılığından dolayı hantal çalışan kod yapısı tamamen ayıklanıp bütün iş* `requests`*&#39;e yaptırılıp ciddi miktarda kaynak ve zaman tasarrufu ettirilmiştir..*</span>
+<span class="sd">- ✅ *Kolay erişilebilir olması ve ilham yaratması için* **pypi** *depolarına yüklenmiştir..*</span>
+
+<span class="sd">## 🌐 Telif Hakkı ve Lisans</span>
+
+<span class="sd">* *Copyright (C) 2021 by* [keyiflerolsun](https://github.com/keyiflerolsun) ❤️️</span>
+<span class="sd">* [GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007](https://github.com/keyiflerolsun/keyifUserBot/blob/master/LICENSE) *Koşullarına göre lisanslanmıştır..*</span>
+
+<span class="sd">## ♻️ İletişim</span>
+
+<span class="sd">*Benimle iletişime geçmek isterseniz, **Telegram**&#39;dan mesaj göndermekten çekinmeyin;* [@keyiflerolsun](https://t.me/keyiflerolsun)</span>
+
+<span class="sd">## 💸 Bağış Yap</span>
+
+<span class="sd">**[☕️ Kahve Ismarla](https://KekikAkademi.org/Kahve)**</span>
+
+<span class="sd">##</span>
+
+<span class="sd">&gt; **[@KekikAkademi](https://t.me/KekikAkademi)** *için yazılmıştır..*</span>
+<span class="sd">&#39;&#39;&#39;</span>
 
 <span class="n">YAZAR</span>       <span class="o">=</span> <span class="s1">&#39;keyiflerolsun&#39;</span>
 <span class="n">YAZAR_POSTA</span> <span class="o">=</span> <span class="s1">&#39;keyiflerolsun@gmail.com&#39;</span>
 
 <span class="n">PAKET</span>       <span class="o">=</span> <span class="s1">&#39;BTKSorgu&#39;</span>
-<span class="n">VERSIYON</span>    <span class="o">=</span> <span class="s1">&#39;0.0.9&#39;</span>
+<span class="n">VERSIYON</span>    <span class="o">=</span> <span class="s1">&#39;0.1.0&#39;</span>
 
 <span class="n">REPO</span>        <span class="o">=</span> <span class="s1">&#39;https://github.com/keyiflerolsun/BTKSorgu&#39;</span>
 <span class="n">ACIKLAMA</span>    <span class="o">=</span> <span class="s1">&#39;Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu&#39;</span>
