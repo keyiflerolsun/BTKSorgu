@@ -55,7 +55,7 @@ print(bitir-basla)
 
 > Bu programın yazılma ve açık kaynak kodlu olarak paylaşılma amacı: _Tarayıcı Otomasyonlarının sebep olduğu  **gereksiz kaynak tüketimi** ve  **zaman kaybının**  önüne geçmeye teşvik etmektir…_
 
-> Tarayıcı Otomasyonu : [_Selenium IDE_](https://www.selenium.dev/selenium-ide/) _**-**_ [_Katalon Automation Recorder_](https://www.katalon.com/resources-center/blog/katalon-automation-recorder/) _**-**_ [_BrowserAutomationStudio_](https://bablosoft.com/shop/BrowserAutomationStudio)
+> Tarayıcı Otomasyonu : _[Selenium IDE](https://www.selenium.dev/selenium-ide/)_ _**-**_ _[Katalon Automation Recorder](https://www.katalon.com/resources-center/blog/katalon-automation-recorder/)_ _**-**_ _[BrowserAutomationStudio](https://bablosoft.com/shop/BrowserAutomationStudio)_
 
 > Karşılaştırması : **[Selenium VS Requests](https://www.r10.net/off-topic/2751412-selenium-vs-requests.html)**
 
@@ -85,7 +85,7 @@ YAZAR       = 'keyiflerolsun'
 YAZAR_POSTA = 'keyiflerolsun@gmail.com'
 
 PAKET       = 'BTKSorgu'
-VERSIYON    = '0.1.1'
+VERSIYON    = '0.1.2'
 
 REPO        = 'https://github.com/keyiflerolsun/BTKSorgu'
 ACIKLAMA    = 'Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu'
