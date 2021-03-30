@@ -52,9 +52,9 @@ print(bitir-basla)
 5. *Sorgu adresini okuduğun doğrulama koduyla birlikte post at,*
 6. *Dönen yanıtı ayrıştırıp edip geri döndür..*
 
-> Bu programın yazılma ve açık kaynak kodlu olarak paylaşılma amacı: _Tarayıcı Otomasyonlarının sebep olduğu  **gereksiz kaynak tüketimi** ve  **zaman kaybının**  önüne geçmeye teşvik etmektir…_
+> Bu programın yazılma ve açık kaynak kodlu olarak paylaşılma amacı: *Tarayıcı Otomasyonlarının sebep olduğu  **gereksiz kaynak tüketimi** ve  **zaman kaybının**  önüne geçmeye teşvik etmektir…*
 
-> Tarayıcı Otomasyonu : _[Selenium IDE](https://www.selenium.dev/selenium-ide/)_ _**-**_ _[Katalon Automation Recorder](https://www.katalon.com/resources-center/blog/katalon-automation-recorder/)_ _**-**_ _[BrowserAutomationStudio](https://bablosoft.com/shop/BrowserAutomationStudio)_
+> Tarayıcı Otomasyonu : *[Selenium IDE](https://www.selenium.dev/selenium-ide/)* **-** *[Katalon Automation Recorder](https://www.katalon.com/resources-center/blog/katalon-automation-recorder/)* **-** *[BrowserAutomationStudio](https://bablosoft.com/shop/BrowserAutomationStudio)*
 
 > Karşılaştırması : **[Selenium VS Requests](https://www.r10.net/off-topic/2751412-selenium-vs-requests.html)**
 
