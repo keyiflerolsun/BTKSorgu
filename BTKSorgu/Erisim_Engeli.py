@@ -10,12 +10,13 @@ from PIL         import Image
 from os import remove
 
 class BTKSorgu(object):
-    """Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu
-    
-    Dönüş :
-        (str)
-            {domain}, {karar}
-            Karar Bulunamadı.
+    """
+    BTKSorgu : Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu
+
+    Dönüş
+    ----------
+        (str):
+            {domain}, {karar} Karar Bulunamadı.
     """
     def __init__(self, sorgu_url:str, arka_plan:bool=False):
         self.arka_plan     = arka_plan
@@ -27,6 +28,7 @@ class BTKSorgu(object):
 
     @property
     def captcha_ver(self):
+        "Captcha görselini indirip OCR ile okur"
         ilk_bakis    = self.oturum.get(self.sorgu_sayfasi, allow_redirects=True)
         captcha_yolu = Selector(ilk_bakis.text).xpath("//div[@class='arama_captcha']/img/@src").get()
 
@@ -38,6 +40,7 @@ class BTKSorgu(object):
 
     @property
     def karar(self):
+        "Captcha ile birlikte sorgu sitesini POST eder"
         captcha = self.captcha_ver
 
         payload = {
@@ -78,6 +81,7 @@ class BTKSorgu(object):
         return karar
 
     def __repr__(self) -> str:
+        "Kararı Döndürür"
         hatalar = ['Lütfen güvenlik kodunu giriniz.', 'Güvenlik kodunu yanlış girdiniz. Lütfen Güvenlik Kodunu resimde gördüğünüz şekilde giriniz.']
         while True:
             karar = self.karar
