@@ -72,12 +72,13 @@
 <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">remove</span>
 
 <span class="k">class</span> <span class="nc">BTKSorgu</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu</span>
-<span class="sd">    </span>
-<span class="sd">    Dönüş :</span>
-<span class="sd">        (str)</span>
-<span class="sd">            {domain}, {karar}</span>
-<span class="sd">            Karar Bulunamadı.</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    BTKSorgu : Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu</span>
+
+<span class="sd">    Dönüş</span>
+<span class="sd">    ----------</span>
+<span class="sd">        (str):</span>
+<span class="sd">            {domain}, {karar} Karar Bulunamadı.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sorgu_url</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">arka_plan</span><span class="p">:</span><span class="nb">bool</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">arka_plan</span>     <span class="o">=</span> <span class="n">arka_plan</span>
@@ -89,6 +90,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">captcha_ver</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">&quot;Captcha görselini indirip OCR ile okur&quot;</span>
         <span class="n">ilk_bakis</span>    <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">oturum</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sorgu_sayfasi</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="n">captcha_yolu</span> <span class="o">=</span> <span class="n">Selector</span><span class="p">(</span><span class="n">ilk_bakis</span><span class="o">.</span><span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&quot;//div[@class=&#39;arama_captcha&#39;]/img/@src&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
 
@@ -100,6 +102,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">karar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">&quot;Captcha ile birlikte sorgu sitesini POST eder&quot;</span>
         <span class="n">captcha</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">captcha_ver</span>
 
         <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -140,6 +143,7 @@
         <span class="k">return</span> <span class="n">karar</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="s2">&quot;Kararı Döndürür&quot;</span>
         <span class="n">hatalar</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Lütfen güvenlik kodunu giriniz.&#39;</span><span class="p">,</span> <span class="s1">&#39;Güvenlik kodunu yanlış girdiniz. Lütfen Güvenlik Kodunu resimde gördüğünüz şekilde giriniz.&#39;</span><span class="p">]</span>
         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
             <span class="n">karar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">karar</span>
@@ -163,12 +167,13 @@
                 <details>
             <summary>View Source</summary>
             <div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">BTKSorgu</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu</span>
-<span class="sd">    </span>
-<span class="sd">    Dönüş :</span>
-<span class="sd">        (str)</span>
-<span class="sd">            {domain}, {karar}</span>
-<span class="sd">            Karar Bulunamadı.</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    BTKSorgu : Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu</span>
+
+<span class="sd">    Dönüş</span>
+<span class="sd">    ----------</span>
+<span class="sd">        (str):</span>
+<span class="sd">            {domain}, {karar} Karar Bulunamadı.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sorgu_url</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">arka_plan</span><span class="p">:</span><span class="nb">bool</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">arka_plan</span>     <span class="o">=</span> <span class="n">arka_plan</span>
@@ -180,6 +185,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">captcha_ver</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">&quot;Captcha görselini indirip OCR ile okur&quot;</span>
         <span class="n">ilk_bakis</span>    <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">oturum</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sorgu_sayfasi</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="n">captcha_yolu</span> <span class="o">=</span> <span class="n">Selector</span><span class="p">(</span><span class="n">ilk_bakis</span><span class="o">.</span><span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&quot;//div[@class=&#39;arama_captcha&#39;]/img/@src&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
 
@@ -191,6 +197,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">karar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">&quot;Captcha ile birlikte sorgu sitesini POST eder&quot;</span>
         <span class="n">captcha</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">captcha_ver</span>
 
         <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -231,6 +238,7 @@
         <span class="k">return</span> <span class="n">karar</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="s2">&quot;Kararı Döndürür&quot;</span>
         <span class="n">hatalar</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Lütfen güvenlik kodunu giriniz.&#39;</span><span class="p">,</span> <span class="s1">&#39;Güvenlik kodunu yanlış girdiniz. Lütfen Güvenlik Kodunu resimde gördüğünüz şekilde giriniz.&#39;</span><span class="p">]</span>
         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
             <span class="n">karar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">karar</span>
@@ -241,12 +249,13 @@
 
         </details>
 
-            <div class="docstring"><p>Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu</p>
+            <div class="docstring"><p>BTKSorgu : Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu</p>
 
-<p>Dönüş :
-    (str)
-        {domain}, {karar}
-        Karar Bulunamadı.</p>
+<h2 id="donus">Dönüş</h2>
+
+<pre><code>(str):
+    {domain}, {karar} Karar Bulunamadı.
+</code></pre>
 </div>
 
 
@@ -279,7 +288,9 @@
         <span class="name">captcha_ver</span>
     </div>
 
-    
+            <div class="docstring"><p>Captcha görselini indirip OCR ile okur</p>
+</div>
+
 
                             </div>
                             <div id="BTKSorgu.karar" class="classattr">
@@ -288,7 +299,9 @@
         <span class="name">karar</span>
     </div>
 
-    
+            <div class="docstring"><p>Captcha ile birlikte sorgu sitesini POST eder</p>
+</div>
+
 
                             </div>
                 </section>
