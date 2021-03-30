@@ -78,8 +78,6 @@ print(bitir-basla)
 
 **[☕️ Kahve Ismarla](https://KekikAkademi.org/Kahve)**
 
-##
-
 > **[@KekikAkademi](https://t.me/KekikAkademi)** *için yazılmıştır..*
 '''
 
@@ -87,7 +85,7 @@ YAZAR       = 'keyiflerolsun'
 YAZAR_POSTA = 'keyiflerolsun@gmail.com'
 
 PAKET       = 'BTKSorgu'
-VERSIYON    = '0.1.0'
+VERSIYON    = '0.1.1'
 
 REPO        = 'https://github.com/keyiflerolsun/BTKSorgu'
 ACIKLAMA    = 'Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu'
