@@ -81,16 +81,6 @@ print(bitir-basla)
 > **[@KekikAkademi](https://t.me/KekikAkademi)** *için yazılmıştır..*
 '''
 
-YAZAR       = 'keyiflerolsun'
-YAZAR_POSTA = 'keyiflerolsun@gmail.com'
-
-PAKET       = 'BTKSorgu'
-VERSIYON    = '0.1.4'
-
-REPO        = 'https://github.com/keyiflerolsun/BTKSorgu'
-ACIKLAMA    = 'Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu'
-ANAHTAR_KLM = [PAKET, 'KekikAkademi', 'keyiflerolsun']
-
 ####
 from BTKSorgu.Erisim_Engeli import BTKSorgu
 ####

@@ -3,22 +3,17 @@
 from setuptools import setup
 from io import open
 
-from BTKSorgu import YAZAR, YAZAR_POSTA, PAKET, VERSIYON, REPO, ACIKLAMA, ANAHTAR_KLM
-
-with open(f'{PAKET}/requirements.txt') as dosya:
-    GEREKSINIM = dosya.read().splitlines()
-
 setup(
-    author       = YAZAR,
-    author_email = YAZAR_POSTA,
+    author       = 'keyiflerolsun',
+    author_email = 'keyiflerolsun@gmail.com',
 
-    packages     = [PAKET],
+    packages     = ['BTKSorgu'],
 
-    name         = PAKET,
-    version      = VERSIYON,
-    url          = REPO,
-    description  = ACIKLAMA,
-    keywords     = ANAHTAR_KLM,
+    name         = 'BTKSorgu',
+    version      = '0.1.5',
+    url          = 'https://github.com/keyiflerolsun/BTKSorgu',
+    description  = 'Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu',
+    keywords     = ['BTKSorgu', 'KekikAkademi', 'keyiflerolsun'],
 
     long_description_content_type   = "text/markdown",
     long_description                = "".join(open("README.md", encoding="utf-8").readlines()),
@@ -32,5 +27,10 @@ setup(
     ],
 
     python_requires     = '>=3.6',
-    install_requires    = GEREKSINIM
+    install_requires    = [
+        "requests",
+        "parsel",
+        "Pillow",
+        "pytesseract"
+    ]
 )
