@@ -20,9 +20,10 @@ finish-args:
   - --socket=pulseaudio
   # ? Bildirim Erişim İzni
   - --talk-name=org.freedesktop.Notifications
-  # ? tesseract Erişim
+  # ! tesseract Erişim
   - --env=TESSDATA_PREFIX=/app/share/tessdata
 
+# ! tesseract Çöpü Temizle
 cleanup:
   - /sbin
   - /include
@@ -38,6 +39,7 @@ cleanup:
 
 modules:
 - SRC/python3-tkinter.yaml
+# * Kurulumda İnternet Olduğu için Gereksiz
 # - SRC/python3-requirements.json
 
 # ! https://github.com/flathub/com.github.dynobo.normcap/blob/master/com.github.dynobo.normcap.yml
@@ -74,15 +76,17 @@ modules:
     - install -Dm644 Shared/org.KekikAkademi.BTKSorgu.appdata.xml /app/share/appdata/org.KekikAkademi.BTKSorgu.appdata.xml
     - install -Dm644 Shared/org.KekikAkademi.BTKSorgu.svg /app/share/icons/hicolor/scalable/apps/org.KekikAkademi.BTKSorgu.svg
     - python3 -m pip install . --prefix=${FLATPAK_DEST}
-  # ! Lokal Kurulum
+
+  # * Lokal Kurulum (İnternet Erişimi Var)
   build-options:
     build-args:
       - "--share=network"
   sources:
     - type: dir
       path: "."
-  # ! FlatHub Kurulum
+
+  # ! FlatHub Kurulum (İnternet Erişimi Yok)
   # sources:
   #   - type: git
   #     url: https://github.com/keyiflerolsun/BTKSorgu.git
-  #     commit: dffc294ead4c1475474d3e6271b3cd4959f3e754
+  #     commit: 48dec866986d3b5304d3dd07ad61dd16bb98dc4c
