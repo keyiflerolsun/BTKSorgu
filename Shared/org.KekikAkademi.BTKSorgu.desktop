@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=BTKSorgu
+GenericName=BTK Erişim Engel Sorgusu
+Comment=Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu..
+Version=1.0.2
+Keywords=BTKSorgu;KekikAkademi;keyiflerolsun
+Exec=BTKSorguGUI
+Icon=org.KekikAkademi.BTKSorgu
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Education;

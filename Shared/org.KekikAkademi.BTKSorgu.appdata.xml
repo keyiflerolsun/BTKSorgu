@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2023 keyiflerolsun -->
+<component type="desktop-application">
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+
+  <id type="desktop">org.KekikAkademi.BTKSorgu.desktop</id>
+  <launchable type="desktop-id">org.KekikAkademi.BTKSorgu.desktop</launchable>
+
+  <name>BTKSorgu</name>
+  <summary>Is the target website accessible in Turkey? (BTK)</summary>
+  <summary xml:lang="tr_TR">Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu..</summary>
+  <url type="homepage">https://github.com/keyiflerolsun/BTKSorgu</url>
+  <url type="bugtracker">https://github.com/keyiflerolsun/BTKSorgu/issues</url>
+  <url type="donation">https://keyiflerolsun.me/Kahve</url>
+  <developer_name>keyiflerolsun</developer_name>
+
+  <description>
+    <p>Is the target website accessible in Turkey? (BTK)</p>
+    <p>An example application prepared with Python language and Tkinter Library.</p>
+  </description>
+
+  <description xml:lang="tr_TR">
+    <p>Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu..</p>
+    <p>https://t.me/KekikAkademi için hazırlanmıştır..</p>
+  </description>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/Shared/SS.png</image>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+      <category>Education</category>
+  </categories>
+
+  <releases>
+    <release version="1.0.2" date="2023-5-17">
+      <description>
+        <p>
+          Proje Başlangıcı
+        </p>
+      </description>
+    </release>
+  </releases>
+
+  <content_rating type="oars-1.1"/>
+</component>

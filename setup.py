@@ -6,7 +6,7 @@ from io         import open
 setup(
     # ? Genel Bilgiler
     name         = "BTKSorgu",
-    version      = "1.0.1",
+    version      = "1.0.2",
     url          = "https://github.com/keyiflerolsun/E-Fatura_Sorgu",
     description  = "Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu",
     keywords     = ["BTKSorgu", "KekikAkademi", "keyiflerolsun"],
@@ -30,17 +30,28 @@ setup(
         "Kekik",
         "requests",
         "parsel",
+        "cssselect",
         "regex",
         "Pillow",
-        "pytesseract"
+        "pytesseract",
+        "sv_ttk"
     ],
 
     # ? Konsoldan Çalıştırılabilir
     entry_points = {
         "console_scripts": [
-            "BTKSorgu = BTKSorgu.konsol:basla",
+            "BTKSorgu    = BTKSorgu.konsol:basla",
+            "BTKSorguGUI = BTKSorgu.arayuz:basla"
         ]
     },
+
+    # ? Masaüstü Paketi
+    setup_requires = ["install_freedesktop"],
+    data_files     = [
+        ("share/applications",                ["Shared/org.KekikAkademi.BTKSorgu.desktop"]),
+        ("share/appdata",                     ["Shared/org.KekikAkademi.BTKSorgu.appdata.xml"]),
+        ("share/icons/hicolor/scalable/apps", ["Shared/org.KekikAkademi.BTKSorgu.svg"])
+    ],
 
     # ? PyPI Bilgileri
     long_description_content_type = "text/markdown",
