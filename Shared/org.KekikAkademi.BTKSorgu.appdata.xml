@@ -37,6 +37,13 @@
   </categories>
 
   <releases>
+    <release version="1.0.8" date="2023-5-18">
+      <description>
+        <p>
+          Readme Genişletildi ve Manuel Derleme Aşamaları Eklendi..
+        </p>
+      </description>
+    </release>
     <release version="1.0.8" date="2023-5-17">
       <description>
         <p>

@@ -40,10 +40,10 @@ pip install -U BTKSorgu
 
 ```bash
 # Yüklemek
-flatpak install flathub org.kekikakademi.ntvHaber
+flatpak install flathub org.KekikAkademi.BTKSorgu
 
 # Çalıştırmak
-flatpak run org.kekikakademi.ntvHaber
+flatpak run org.KekikAkademi.BTKSorgu
 ```
 
 ## 📝 Kullanım
@@ -82,7 +82,7 @@ BTKSorguGUI
 
 # veya
 
-flatpak run org.kekikakademi.ntvHaber
+flatpak run org.KekikAkademi.BTKSorgu
 ```
 
 ## 🔖 Program Akış Şeması
@@ -186,6 +186,6 @@ flatpak uninstall org.KekikAkademi.BTKSorgu
 
 **[☕️ Kahve Ismarla](https://KekikAkademi.org/Kahve)**
 
-##
+***
 
 > **[@KekikAkademi](https://t.me/KekikAkademi)** *için yazılmıştır..*
