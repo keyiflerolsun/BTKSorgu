@@ -6,7 +6,7 @@ from io         import open
 setup(
     # ? Genel Bilgiler
     name         = "BTKSorgu",
-    version      = "1.0.4",
+    version      = "1.0.5",
     url          = "https://github.com/keyiflerolsun/E-Fatura_Sorgu",
     description  = "Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu",
     keywords     = ["BTKSorgu", "KekikAkademi", "keyiflerolsun"],
@@ -27,6 +27,7 @@ setup(
     install_requires = [
         "setuptools",
         "wheel",
+        "install_freedesktop",
         "rich",
         "requests",
         "parsel",
