@@ -36,7 +36,7 @@ pip install BTKSorgu
 pip install -U BTKSorgu
 ```
 
-### <img width="14" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/flatpak.svg"> FlatHub (UI)
+### <img width="14" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/flathub.svg"> FlatHub (UI)
 
 ```bash
 # Yüklemek
@@ -81,6 +81,7 @@ BTKSorgu keyiflerolsun.dev
 BTKSorguGUI
 
 # veya
+
 flatpak run org.kekikakademi.ntvHaber
 ```
 
@@ -105,6 +106,63 @@ flatpak run org.kekikakademi.ntvHaber
 - ✅ **Selenium** *bağımlılığından dolayı hantal çalışan kod yapısı tamamen ayıklanıp bütün iş* `requests`*'e yaptırılıp ciddi miktarda kaynak ve zaman tasarrufu ettirilmiştir..*
 - ✅ *Kolay erişilebilir olması ve ilham yaratması için* **pypi** *depolarına yüklenmiştir..*
 - ✅ **Tkinter** *ile basit bir arayüz tasarlanmıştır ve eğitim amacıyla Depolara yüklenmiştir..*
+
+---
+
+<details>
+    <summary style="font-weight: bold; font-size: 18px">
+      <img width="14" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/buddy.svg"> <b>Manuel Derlemek</b>
+      <i>(genişletmek için tıklayın!)</i>
+    </summary>
+    <br/>
+
+### <img width="14" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/python.svg"> Python
+
+```bash
+# Depoyu Çek
+https://github.com/keyiflerolsun/BTKSorgu.git
+cd BTKSorgu
+
+# Paketi Yükle
+pip install .
+
+# Artıkları Temizle
+rm -rf build *.egg-info
+
+# Çalıştır
+BTKSorgu     # CLI
+BTKSorguGUI  # GUI
+
+# Paketi Kaldır
+pip uninstall BTKSorgu
+```
+
+### <img width="14" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/flatpak.svg"> FlatPak
+
+```bash
+# Depoyu Çek
+git clone https://github.com/keyiflerolsun/flathub.git
+cd flathub
+
+# Dala Geç
+git checkout org.KekikAkademi.BTKSorgu
+
+# Paketle
+flatpak-builder --user --install --force-clean build-dir org.KekikAkademi.BTKSorgu.yml
+
+# Artıkları Temizle
+rm -rf .flatpak* .vscode build-dir && find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
+
+# Çalıştır
+flatpak run org.KekikAkademi.BTKSorgu
+
+# Paketi Kaldır
+flatpak uninstall org.KekikAkademi.BTKSorgu
+```
+
+</details>
+
+---
 
 ## 🌐 Telif Hakkı ve Lisans
 
