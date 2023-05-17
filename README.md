@@ -19,14 +19,14 @@
 
 *Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu..*
 
-![BTKSorgu](https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/Shared/SS.png)
+![BTKSorgu](https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/SS.png)
 
 [![ForTheBadge made-with-python](https://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![ForTheBadge built-with-love](https://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/keyiflerolsun/)
 
 ## 🚀 Kurulum
 
-### <img width="14" src="./.github/icons/pypi.svg"> PyPi (Lib - CLI - UI)
+### <img width="14" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/pypi.svg"> PyPi (Lib - CLI - UI)
 
 ```bash
 # Yüklemek
@@ -36,7 +36,7 @@ pip install BTKSorgu
 pip install -U BTKSorgu
 ```
 
-### <img width="14" src="./.github/icons/flatpak.svg"> FlatHub (UI)
+### <img width="14" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/flatpak.svg"> FlatHub (UI)
 
 ```bash
 # Yüklemek
@@ -48,7 +48,7 @@ flatpak run org.kekikakademi.ntvHaber
 
 ## 📝 Kullanım
 
-### <img width="14" src="./.github/icons/python.svg"> Lib
+### <img width="14" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/python.svg"> Lib
 
 ```python
 from BTKSorgu import BTKSorgu
@@ -67,7 +67,7 @@ print(bitir-basla)
     # » 8.352766513824463
 ```
 
-### <img width="14" src="./.github/icons/iterm2.svg"> CLI
+### <img width="14" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/iterm2.svg"> CLI
 
 ```bash
 BTKSorgu keyiflerolsun.dev
@@ -75,7 +75,7 @@ BTKSorgu keyiflerolsun.dev
 # > Bilgi Teknolojileri ve İletişim Kurumu tarafından uygulanan bir karar bulunamadı.
 ```
 
-### <img width="14" src="./.github/icons/freedesktop.svg"> UI
+### <img width="14" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/freedesktop.svg"> UI
 
 ```bash
 BTKSorguGUI

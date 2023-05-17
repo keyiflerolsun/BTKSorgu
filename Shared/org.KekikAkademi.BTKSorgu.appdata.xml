@@ -28,7 +28,7 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/Shared/SS.png</image>
+      <image>https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/SS.png</image>
     </screenshot>
   </screenshots>
 
@@ -37,7 +37,7 @@
   </categories>
 
   <releases>
-    <release version="1.0.6" date="2023-5-17">
+    <release version="1.0.7" date="2023-5-17">
       <description>
         <p>
           Readme Düzenlendi..
