@@ -16,7 +16,7 @@
 
 *Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu..*
 
-![BTKSorgu](https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/Shared/SS.png)
+![BTKSorgu](https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/Shared/SS.png)
 
 [![ForTheBadge made-with-python](https://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![ForTheBadge built-with-love](https://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/keyiflerolsun/)
