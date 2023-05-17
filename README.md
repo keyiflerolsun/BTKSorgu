@@ -8,11 +8,14 @@
 ![License](https://img.shields.io/pypi/l/BTKSorgu?logo=gnu&logoColor=white)
 ![Status](https://img.shields.io/pypi/status/BTKSorgu?logo=windowsterminal&logoColor=white)
 
-![PyPI](https://img.shields.io/pypi/v/BTKSorgu?logo=pypi&logoColor=white)
-![PyPI - Downloads](https://img.shields.io/pypi/dm/BTKSorgu?logo=pypi&logoColor=white)
-![PyPI - Wheel](https://img.shields.io/pypi/wheel/BTKSorgu?logo=pypi&logoColor=white)
+[![PyPI](https://img.shields.io/pypi/v/BTKSorgu?logo=pypi&logoColor=white)](https://pypi.org/project/BTKSorgu)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/BTKSorgu?logo=pypi&logoColor=white)](https://pypi.org/project/BTKSorgu)
+[![PyPI - Wheel](https://img.shields.io/pypi/wheel/BTKSorgu?logo=pypi&logoColor=white)](https://pypi.org/project/BTKSorgu)
 
 [![PyPI Yükle](https://github.com/keyiflerolsun/BTKSorgu/actions/workflows/KekikFlow.yml/badge.svg)](https://github.com/keyiflerolsun/BTKSorgu/actions/workflows/KekikFlow.yml)
+
+[![FlatHub](https://img.shields.io/flathub/v/org.KekikAkademi.BTKSorgu?logo=flathub&logoColor=white)](https://flathub.org/tr/apps/org.KekikAkademi.BTKSorgu)
+[![FlatHub - Downloads](https://img.shields.io/flathub/downloads/org.KekikAkademi.BTKSorgu?logo=flathub&logoColor=white)](https://flathub.org/tr/apps/org.KekikAkademi.BTKSorgu)
 
 *Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu..*
 
@@ -23,6 +26,8 @@
 
 ## 🚀 Kurulum
 
+### PyPi (Lib-CLI-UI)
+
 ```bash
 # Yüklemek
 pip install BTKSorgu
@@ -31,7 +36,19 @@ pip install BTKSorgu
 pip install -U BTKSorgu
 ```
 
+### FlatHub (UI)
+
+```bash
+# Yüklemek
+flatpak install flathub org.kekikakademi.ntvHaber
+
+# Çalıştırmak
+flatpak run org.kekikakademi.ntvHaber
+```
+
 ## 📝 Kullanım
+
+### Lib
 
 ```python
 from BTKSorgu import BTKSorgu
@@ -50,10 +67,21 @@ print(bitir-basla)
     # » 8.352766513824463
 ```
 
+### CLI
+
 ```bash
 BTKSorgu keyiflerolsun.dev
 
 # > Bilgi Teknolojileri ve İletişim Kurumu tarafından uygulanan bir karar bulunamadı.
+```
+
+### UI
+
+```bash
+BTKSorguGUI
+
+# veya
+flatpak run org.kekikakademi.ntvHaber
 ```
 
 ## 🔖 Program Akış Şeması
@@ -76,6 +104,7 @@ BTKSorgu keyiflerolsun.dev
 - ✅ **[@raifpy](https://github.com/raifpy)** *tarafından kodlanmış projenin hantal bir bileşeni itinayla `dızz 🐍`'lanmıştır..*
 - ✅ **Selenium** *bağımlılığından dolayı hantal çalışan kod yapısı tamamen ayıklanıp bütün iş* `requests`*'e yaptırılıp ciddi miktarda kaynak ve zaman tasarrufu ettirilmiştir..*
 - ✅ *Kolay erişilebilir olması ve ilham yaratması için* **pypi** *depolarına yüklenmiştir..*
+- ✅ **Tkinter** *ile basit bir arayüz tasarlanmıştır ve eğitim amacıyla Depolara yüklenmiştir..*
 
 ## 🌐 Telif Hakkı ve Lisans
 
