@@ -9,9 +9,9 @@ command: BTKSorguGUI
 finish-args:
   # ? X11 + XShm Erişimi
   - --share=ipc
-  # - --socket=x11
-  # ? Wayland Erişimi
-  - --socket=wayland
+  - --socket=x11
+  # ? Wayland Erişimi (Tkinter Desteklemiyor)
+  # - --socket=wayland
   # ? Wayland mevcut olmadığında X11 Erişimi Ver
   - --socket=fallback-x11
   # ? Ağ Erişimi
