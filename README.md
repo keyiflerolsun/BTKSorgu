@@ -26,7 +26,7 @@
 
 ## 🚀 Kurulum
 
-### <img width="14" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/pypi.svg"> PyPi (Lib - CLI - UI)
+### <img width="16" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/pypi.svg"> PyPi (Lib - CLI - UI)
 
 ```bash
 # Yüklemek
@@ -36,7 +36,7 @@ pip install BTKSorgu
 pip install -U BTKSorgu
 ```
 
-### <img width="14" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/flathub.svg"> FlatHub (UI)
+### <img width="16" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/flathub.svg"> FlatHub (UI)
 
 ```bash
 # Yüklemek
@@ -48,7 +48,7 @@ flatpak run org.kekikakademi.ntvHaber
 
 ## 📝 Kullanım
 
-### <img width="14" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/python.svg"> Lib
+### <img width="16" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/python.svg"> Lib
 
 ```python
 from BTKSorgu import BTKSorgu
@@ -67,7 +67,7 @@ print(bitir-basla)
     # » 8.352766513824463
 ```
 
-### <img width="14" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/iterm2.svg"> CLI
+### <img width="16" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/iterm2.svg"> CLI
 
 ```bash
 BTKSorgu keyiflerolsun.dev
@@ -75,7 +75,7 @@ BTKSorgu keyiflerolsun.dev
 # > Bilgi Teknolojileri ve İletişim Kurumu tarafından uygulanan bir karar bulunamadı.
 ```
 
-### <img width="14" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/freedesktop.svg"> UI
+### <img width="16" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/freedesktop.svg"> UI
 
 ```bash
 BTKSorguGUI
@@ -98,7 +98,7 @@ flatpak run org.kekikakademi.ntvHaber
 
 > Tarayıcı Otomasyonu : *[Selenium IDE](https://www.selenium.dev/selenium-ide/)* **-** *[Katalon Automation Recorder](https://www.katalon.com/resources-center/blog/katalon-automation-recorder/)* **-** *[BrowserAutomationStudio](https://bablosoft.com/shop/BrowserAutomationStudio)*
 
-> Karşılaştırması : **[Selenium VS Requests](https://www.r10.net/off-topic/2751412-selenium-vs-requests.html)**
+> Karşılaştırması : **[Selenium VS Requests](https://www.r10.net/off-topic/2751612-selenium-vs-requests.html)**
 
 ## 📝 Proje İlerlemesi
 
@@ -110,18 +110,21 @@ flatpak run org.kekikakademi.ntvHaber
 ---
 
 <details>
-    <summary style="font-weight: bold; font-size: 18px">
-      <img width="14" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/buddy.svg"> <b>Manuel Derlemek</b>
+    <summary style="font-weight: bold; font-size: 20px">
+      <img width="16" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/buddy.svg"> <b>Manuel Derlemek</b>
       <i>(genişletmek için tıklayın!)</i>
     </summary>
     <br/>
 
-### <img width="14" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/python.svg"> Python
+### <img width="16" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/python.svg"> Python
 
 ```bash
 # Depoyu Çek
 https://github.com/keyiflerolsun/BTKSorgu.git
 cd BTKSorgu
+
+# Gerekli Ortamları Kur
+pip install -U pip setuptools wheel twine
 
 # Paketi Yükle
 pip install .
@@ -137,7 +140,7 @@ BTKSorguGUI  # GUI
 pip uninstall BTKSorgu
 ```
 
-### <img width="14" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/flatpak.svg"> FlatPak
+### <img width="16" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/flatpak.svg"> FlatPak
 
 ```bash
 # Depoyu Çek
@@ -146,6 +149,12 @@ cd flathub
 
 # Dala Geç
 git checkout org.KekikAkademi.BTKSorgu
+
+# Gerekli Ortamları Kur
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+flatpak update && flatpak upgrade
+flatpak install flathub org.freedesktop.{Platform,Sdk}//22.08
 
 # Paketle
 flatpak-builder --user --install --force-clean build-dir org.KekikAkademi.BTKSorgu.yml
