@@ -22,7 +22,7 @@ finish-args:
   - --talk-name=org.freedesktop.Notifications
 
 modules:
-- Shared/python3-tkinter.yaml
+- python3-tkinter.yaml
 
 - name: BTKSorgu-yukleyici
   buildsystem: simple
@@ -30,13 +30,10 @@ modules:
     build-args:
       - "--share=network"
   build-commands:
-    - install -Dm644 Shared/org.KekikAkademi.BTKSorgu.desktop /app/share/applications/org.KekikAkademi.BTKSorgu.desktop
-    - install -Dm644 Shared/org.KekikAkademi.BTKSorgu.appdata.xml /app/share/appdata/org.KekikAkademi.BTKSorgu.appdata.xml
-    - install -Dm644 Shared/org.KekikAkademi.BTKSorgu.svg /app/share/icons/hicolor/scalable/apps/org.KekikAkademi.BTKSorgu.svg
+    - install -Dm644 org.KekikAkademi.BTKSorgu.desktop /app/share/applications/org.KekikAkademi.BTKSorgu.desktop
+    - install -Dm644 org.KekikAkademi.BTKSorgu.appdata.xml /app/share/appdata/org.KekikAkademi.BTKSorgu.appdata.xml
+    - install -Dm644 org.KekikAkademi.BTKSorgu.svg /app/share/icons/hicolor/scalable/apps/org.KekikAkademi.BTKSorgu.svg
     - python3 -m pip install . --prefix=${FLATPAK_DEST}
   sources:
-    # - type: git
-    #   url: https://github.com/keyiflerolsun/BTKSorgu.git
-    #   commit: b32d0d0920afabb77086de3da6261a120c8bf8fc
     - type: dir
       path: "."

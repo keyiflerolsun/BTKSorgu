@@ -1,6 +1,11 @@
 # Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
-from Kekik.cli import konsol
+from rich         import pretty, traceback
+from rich.console import Console
+pretty.install()
+traceback.install(show_locals=False)
+konsol = Console(log_path=False)
+
 from BTKSorgu  import BTKSorgu
 from sys       import argv
 
