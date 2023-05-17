@@ -26,7 +26,7 @@
 
 ## 🚀 Kurulum
 
-### PyPi (Lib-CLI-UI)
+### <img width="14" src="./.github/icons/pypi.svg"> PyPi (Lib - CLI - UI)
 
 ```bash
 # Yüklemek
@@ -36,7 +36,7 @@ pip install BTKSorgu
 pip install -U BTKSorgu
 ```
 
-### FlatHub (UI)
+### <img width="14" src="./.github/icons/flatpak.svg"> FlatHub (UI)
 
 ```bash
 # Yüklemek
@@ -48,7 +48,7 @@ flatpak run org.kekikakademi.ntvHaber
 
 ## 📝 Kullanım
 
-### Lib
+### <img width="14" src="./.github/icons/python.svg"> Lib
 
 ```python
 from BTKSorgu import BTKSorgu
@@ -67,7 +67,7 @@ print(bitir-basla)
     # » 8.352766513824463
 ```
 
-### CLI
+### <img width="14" src="./.github/icons/iterm2.svg"> CLI
 
 ```bash
 BTKSorgu keyiflerolsun.dev
@@ -75,7 +75,7 @@ BTKSorgu keyiflerolsun.dev
 # > Bilgi Teknolojileri ve İletişim Kurumu tarafından uygulanan bir karar bulunamadı.
 ```
 
-### UI
+### <img width="14" src="./.github/icons/freedesktop.svg"> UI
 
 ```bash
 BTKSorguGUI
