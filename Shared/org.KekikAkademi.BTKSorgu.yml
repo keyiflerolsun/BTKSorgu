@@ -10,10 +10,10 @@ finish-args:
   # ? X11 + XShm Erişimi
   - --share=ipc
   - --socket=x11
-  # ? Wayland Erişimi (Tkinter Desteklemiyor)
+  # ? Wayland Erişimi
   # - --socket=wayland
   # ? Wayland mevcut olmadığında X11 Erişimi Ver
-  - --socket=fallback-x11
+  # - --socket=fallback-x11
   # ? Ağ Erişimi
   - --share=network
   # ? PulseAudio Kullanarak Sesleri Çal
