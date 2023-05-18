@@ -1,0 +1,9 @@
+install-freedesktop
+rich
+requests
+parsel
+cssselect
+regex
+Pillow
+pytesseract
+sv_ttk

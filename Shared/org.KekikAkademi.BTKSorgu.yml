@@ -40,7 +40,7 @@ cleanup:
 modules:
 - SRC/python3-tkinter.yaml
 # * Kurulumda İnternet Olduğu için Gereksiz
-# - SRC/python3-requirements.json
+# - SRC/python3-requirements.yaml
 
 # ! https://github.com/flathub/com.github.dynobo.normcap/blob/master/com.github.dynobo.normcap.yml
 - name: leptonica
