@@ -1,54 +1,48 @@
 # Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
+import os
+
+ust_dizin_ver = lambda _path, n: os.sep.join(_path.split(os.sep)[:-n])
+
+def dosya_ver(dosya_yolu:str, ust_dizin:int):
+    return os.path.join(ust_dizin_ver(__file__, ust_dizin), dosya_yolu)
+
 import tkinter as tk
-from tkinter import messagebox
-from tkinter import ttk
-from base64  import encodebytes
-from sv_ttk  import set_theme
+from tkinter  import ttk, messagebox
+from base64   import encodebytes
+from sv_ttk   import set_theme
+from BTKSorgu import BTKSorgu
+
 
 class KekikGUI(tk.Tk):
-    def __init__(self, pencere_adi:str="keyiflerolsun GUI", logo_yolu:str="logo.png", satir_sutun:int=1, ortala:bool=True, cikis_onay:bool=True, p_genislik=400, p_yukseklik=300):
+    def __init__(self):
         super().__init__()
         set_theme("dark")
-        self.title(pencere_adi)
-        self.cikis_onay = cikis_onay
+        self.title("BTK Sorgu")
 
-        # ? Pencere Kapanmadan Önce Fonksiyon Tetiklemek
-        self.protocol("WM_DELETE_WINDOW", self.pencereyi_kapat)
-
-        # ? Pencere Özellikleri
-        self.bind("<Escape>",    lambda event: self.pencereyi_kapat()) # * ESC ile çıkış
-        self.bind("<F11>",       lambda event: self.tam_ekran())       # * Tam Ekran
-        self.bind("<Control-a>", lambda event: self.ctrl_a(event))
-        self.bind("<Control-A>", lambda event: self.ctrl_a(event))
-
-        # ? Pencere İkonu
-        logo_b64 = encodebytes(open(logo_yolu, "rb").read())
+        logo_b64 = encodebytes(open(file=dosya_ver("logo.png", 1), mode="rb").read())
         favicon  = tk.PhotoImage(data=logo_b64)
         self.iconphoto(False, favicon)
 
-        # ? Pencere için bir minimum boyut ayarlayın ve ortasına yerleştirin
-        self.update()
-        self.p_genislik  = max(self.winfo_width(), p_genislik)
-        self.p_yukseklik = max(self.winfo_height(), p_yukseklik)
-        self.minsize(self.p_genislik, self.p_yukseklik)
-        if ortala:
-            x_kordinat = int((self.winfo_screenwidth()  / 2) - (self.p_genislik  / 2))
-            y_kordinat = int((self.winfo_screenheight() / 2) - (self.p_yukseklik / 2))
-            self.geometry(f"+{x_kordinat}+{y_kordinat - 20}")
+        self.p_genislik  = max(self.winfo_width(), 400)
+        self.p_yukseklik = max(self.winfo_height(), 250)
+        self.minsize(width=self.p_genislik, height=self.p_yukseklik)
 
-        self.pencere = ttk.Frame(self)
-        self.pencere.pack(fill="both", expand=True)
+        self.bind("<Escape>",    lambda _: self.pencereyi_kapat())
+        self.bind("<F11>",       lambda _: self.tam_ekran())
+        self.bind("<Control-a>", lambda event: self.ctrl_a(event))
+        self.bind("<Control-A>", lambda event: self.ctrl_a(event))
+        self.protocol("WM_DELETE_WINDOW", self.pencereyi_kapat)
 
-        # ? Uygulamayı Responsive Hale Getirin
-        for index in range(satir_sutun):  # * 1 Satır 1 Sütun
-            self.pencere.columnconfigure(index=index, weight=1)
-            self.pencere.rowconfigure(index=index, weight=1)
+        # !
+        SorguAlani(self)
+        # !
 
-        # ? Sağ Alt Köşeye Yeniden Boyutlandırma
-        self.sizegrip = ttk.Sizegrip(self.pencere)
-        self.sizegrip.grid(row=100, column=100, padx=(0, 5), pady=(0, 5))
-        self.update()
+        # * Sağ Alt Köşeye Pencere Yeniden Boyutlandırma
+        __temp = ttk.Frame(self)
+        __temp.pack(fill="both", expand=True)
+        sizegrip = ttk.Sizegrip(__temp)
+        sizegrip.place(relx=1, rely=1, anchor="se", x=-5, y=-5)
 
     def tam_ekran(self):
         self.attributes("-fullscreen", not self.attributes("-fullscreen"))
@@ -63,8 +57,67 @@ class KekikGUI(tk.Tk):
         event.widget.icursor("end")
 
     def pencereyi_kapat(self):
-        if (
-            self.cikis_onay and messagebox.askokcancel("Program Kapanıyor", "Bunu Yapmak İstediğine Emin Misin?")
-            or not self.cikis_onay
-        ):
+        if messagebox.askokcancel("👋 Ciao..", "Programı Kapatayım Mı?"):
             self.destroy()
+
+
+class SorguAlani(ttk.Frame):
+    def __init__(self, parent):
+        super().__init__(parent)
+        self.parent = parent
+        self.pack(fill="both", expand=True)
+
+        self.rowconfigure(index=(0, 1, 2), weight=1)
+        self.columnconfigure(index=0,      weight=1)
+
+        self.btk_ui()
+
+    def btk_ui(self):
+        self.arama_metni = ttk.Entry(self)
+        self.arama_metni.insert(0, "Sorgulanacak Domain Giriniz..")
+        self.arama_metni.bind("<Return>", lambda _: self.ara_buton_tiklaninca())
+        self.arama_metni.grid(row=0, column=0, padx=30, pady=10, sticky="ew")
+        self.arama_metni.focus()
+
+        ara_buton = ttk.Button(self, text="Ara", command=lambda: self.ara_buton_tiklaninca())
+        ara_buton.grid(row=1, column=0, padx=30, sticky="ew")
+
+        ayrac = ttk.Separator(self, orient="horizontal")
+        ayrac.grid(row=2, column=0, pady=(10, 0), padx=30, sticky="ew")
+
+        self.cikti_alani = CiktiAlani(self.parent)
+
+    def ara_buton_tiklaninca(self):
+        sorgu = self.arama_metni.get()
+        if not sorgu:
+            return False
+
+        self.arama_metni.state(["disabled"])
+        self.cikti_alani.metin.configure(text="Lütfen Bekleyiniz...", foreground="#EF7F1A")
+        self.update()
+
+        btk_sorgu = str(BTKSorgu(sorgu))
+
+        if "engellenmiştir" not in btk_sorgu:
+            self.arama_metni.state(["!disabled", "!invalid"])
+            self.cikti_alani.metin.configure(text=btk_sorgu, foreground="#17a2b8")            
+        else:
+            self.arama_metni.state(["!disabled", "invalid"])
+            self.cikti_alani.metin.configure(text=btk_sorgu, foreground="#dc3545")
+
+        self.update()
+        self.arama_metni.focus()
+
+
+class CiktiAlani(ttk.Frame):
+    def __init__(self, parent):
+        super().__init__(parent)
+        self.parent = parent
+        self.pack(fill="both", expand=True)
+
+        self.rowconfigure(index=0,    weight=1)
+        self.columnconfigure(index=0, weight=1)
+
+        self.metin = ttk.Label(self, wraplength=self.parent.p_genislik - 65)
+        self.metin.configure(justify="center")
+        self.metin.grid(row=0, column=0, pady=20, sticky="ns")
