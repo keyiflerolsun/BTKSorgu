@@ -16,4 +16,4 @@ jobs:
       - name: Güncelleme Kontrol Et
         id  : guncelleme_var_mi
         run : |
-          echo git diff --name-only HEAD^
+          git diff --name-only HEAD^
