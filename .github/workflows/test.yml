@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Depo Kontrolü
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
 
       - name: Güncelleme Kontrol Et
         id  : guncelleme_var_mi
