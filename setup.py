@@ -6,8 +6,8 @@ from io         import open
 setup(
     # ? Genel Bilgiler
     name         = "BTKSorgu",
-    version      = "1.1.5",
-    url          = "https://github.com/keyiflerolsun/E-Fatura_Sorgu",
+    version      = "1.1.6",
+    url          = "https://github.com/keyiflerolsun/BTKSorgu",
     description  = "Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu",
     keywords     = ["BTKSorgu", "KekikAkademi", "keyiflerolsun"],
 
