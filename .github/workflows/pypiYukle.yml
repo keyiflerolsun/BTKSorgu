@@ -2,7 +2,13 @@
 
 name: PyPI Yükleyici
 
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - setup.py
+  pull_request:
+    paths:
+      - setup.py
 
 jobs:
   PyPIYukleyici:
@@ -19,18 +25,18 @@ jobs:
           python-version: "3.10.8"
 
       - name: Python Sürümünü Göster
-        run: python -c "import sys; print(sys.version)"
+        run : python -c "import sys; print(sys.version)"
 
       - name: Gereksinimleri Yükle
-        run: |
+        run : |
           python -m pip install --upgrade pip
           pip install setuptools wheel twine
 
       - name: Kütüphaneyi PyPI'ye Yükle
-        env:
+        env :
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-        run: |
+        run : |
           python setup.py bdist_wheel sdist
           twine check dist/*
           python -m twine upload dist/*

@@ -1,3 +1,4 @@
+# ! https://github.com/flathub/org.inkscape.Inkscape/blob/master/python3-tkinter.yaml
 name: tkinter
 buildsystem: simple
 build-commands:

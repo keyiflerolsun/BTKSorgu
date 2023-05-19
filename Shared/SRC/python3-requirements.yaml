@@ -1,4 +1,5 @@
-# Generated with flatpak-pip-generator --checker-data --yaml --requirements-file=SRC/requirements.txt --output SRC/python3-requirements --runtime=org.freedesktop.Sdk//22.08
+# Generated with flatpak-pip-generator --checker-data --yaml --requirements-file=SRC/requirements.txt --runtime=org.freedesktop.Sdk//22.08
+name: python3-requirements
 build-commands: []
 buildsystem: simple
 modules:
@@ -191,4 +192,3 @@ modules:
           name: sv_ttk
           packagetype: bdist_wheel
           type: pypi
-name: SRC/python3-requirements
