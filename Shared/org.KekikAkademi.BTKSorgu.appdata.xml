@@ -13,7 +13,7 @@
   <summary xml:lang="tr_TR">Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu..</summary>
 
   <developer_name>keyiflerolsun</developer_name>
-  <url type="homepage">https://kekikakademi.org</url>
+  <url type="homepage">https://KekikAkademi.org</url>
   <url type="donation">https://keyiflerolsun.me/Kahve</url>
   <url type="help">https://t.me/KekikKahve</url>
   <url type="vcs-browser">https://github.com/keyiflerolsun/BTKSorgu</url>
@@ -41,11 +41,17 @@
   </categories>
 
   <releases>
-    <release version="1.1.7" date="2023-5-19">
+    <release version="1.1.8" date="2023-5-19">
       <description>
         <p>
           Çeşitli hatalar giderildi..
         </p>
+        <p>Bkz.:</p>
+        <ul>
+          <li>Github CI/CD</li>
+          <li>Tkinter CTRL+A</li>
+          <li>Tesseract Çöp Temizliği ile paket boyutunun düşürülmesi</li>
+        </ul>
       </description>
     </release>
     <release version="1.1.4" date="2023-5-18">

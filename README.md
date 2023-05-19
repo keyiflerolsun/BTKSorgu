@@ -122,10 +122,11 @@ pip uninstall BTKSorgu
 ### <a href="#"><img width="16" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/flatpak.svg"></a> FlatPak
 
 ```bash
+# Depoyu Çek
 git clone https://github.com/keyiflerolsun/BTKSorgu.git
 cd BTKSorgu
 
-# Dosyaları al
+# Gerekli Dosyaları Al
 mv Shared/*.yml . && mv Shared/SRC .
 
 # Gerekli Ortamları Kur
