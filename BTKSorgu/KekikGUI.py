@@ -1,17 +1,12 @@
 # Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
-import os
-
-ust_dizin_ver = lambda _path, n: os.sep.join(_path.split(os.sep)[:-n])
-
-def dosya_ver(dosya_yolu:str, ust_dizin:int):
-    return os.path.join(ust_dizin_ver(__file__, ust_dizin), dosya_yolu)
-
 import tkinter as tk
 from tkinter  import ttk, messagebox
 from base64   import encodebytes
 from sv_ttk   import set_theme
 from BTKSorgu import BTKSorgu
+
+from BTKSorgu.ekstra import dosya_ver
 
 
 class KekikGUI(tk.Tk):
@@ -41,16 +36,16 @@ class KekikGUI(tk.Tk):
         # * Sağ Alt Köşeye Pencere Yeniden Boyutlandırma
         __temp = ttk.Frame(self)
         __temp.pack(fill="both", expand=True)
-        sizegrip = ttk.Sizegrip(__temp)
-        sizegrip.place(relx=1, rely=1, anchor="se", x=-5, y=-5)
+        self.sizegrip = ttk.Sizegrip(__temp)
+        self.sizegrip.place(relx=1, rely=1, anchor="se", x=-5, y=-5)
 
     def tam_ekran(self):
         self.attributes("-fullscreen", not self.attributes("-fullscreen"))
 
         if self.attributes("-fullscreen"):
-            self.sizegrip.grid(row=100, column=100, padx=(0, 5), pady=(0, 5))        
+            self.sizegrip.place(relx=1, rely=1, anchor="se", x=-5, y=-5)       
         else:
-            self.sizegrip.grid_forget()
+            self.sizegrip.place_forget()
 
     def ctrl_a(self, event):
         event.widget.select_range(0, "end")
