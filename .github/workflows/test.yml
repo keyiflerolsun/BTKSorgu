@@ -16,4 +16,4 @@ jobs:
       - name: Güncelleme Kontrol Et
         id  : guncelleme_var_mi
         run : |
-          git diff --name-only -r HEAD^1 HEAD
+          git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | cat
