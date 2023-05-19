@@ -60,18 +60,15 @@ class SorguAlani(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
         self.parent = parent
-        self.pack(fill="both", expand=True)
+        self.pack(ipadx=100, pady=(10, 0))
 
         self.rowconfigure(index=(0, 1, 2), weight=1)
         self.columnconfigure(index=0,      weight=1)
 
-        self.btk_ui()
-
-    def btk_ui(self):
         self.arama_metni = ttk.Entry(self)
         self.arama_metni.insert(0, "Sorgulanacak Domain Giriniz..")
         self.arama_metni.bind("<Return>", lambda _: self.ara_buton_tiklaninca())
-        self.arama_metni.grid(row=0, column=0, padx=30, pady=10, sticky="ew")
+        self.arama_metni.grid(row=0, column=0, padx=30, pady=(15, 10), sticky="ew")
         self.arama_metni.focus()
 
         ara_buton = ttk.Button(self, text="Ara", command=lambda: self.ara_buton_tiklaninca())
@@ -108,7 +105,7 @@ class CiktiAlani(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
         self.parent = parent
-        self.pack(fill="both", expand=True)
+        self.pack(fill="both", expand=False)
 
         self.rowconfigure(index=0,    weight=1)
         self.columnconfigure(index=0, weight=1)
