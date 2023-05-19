@@ -1,6 +1,7 @@
 # ! https://github.com/flathub/com.github.dynobo.normcap/blob/master/com.github.dynobo.normcap.yml
 name: tesseract
 buildsystem: simple
+build-commands: []
 cleanup:
   - /sbin
   - /include
