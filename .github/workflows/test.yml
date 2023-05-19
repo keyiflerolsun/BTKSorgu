@@ -1,0 +1,19 @@
+# Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
+
+name: Test
+
+on: [push]
+
+jobs:
+  FlatpakYukleyici:
+    name    : Test
+    runs-on : ubuntu-latest
+
+    steps:
+      - name: Depo Kontrolü
+        uses: actions/checkout@v3
+
+      - name: Güncelleme Kontrol Et
+        id  : guncelleme_var_mi
+        run : |
+          echo git diff --name-only HEAD^
