@@ -11,10 +11,14 @@
   <name>BTKSorgu</name>
   <summary>Is the target website accessible in Turkey? (BTK)</summary>
   <summary xml:lang="tr_TR">Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu..</summary>
-  <url type="homepage">https://github.com/keyiflerolsun/BTKSorgu</url>
-  <url type="bugtracker">https://github.com/keyiflerolsun/BTKSorgu/issues</url>
-  <url type="donation">https://keyiflerolsun.me/Kahve</url>
+
   <developer_name>keyiflerolsun</developer_name>
+  <url type="homepage">https://kekikakademi.org</url>
+  <url type="donation">https://keyiflerolsun.me/Kahve</url>
+  <url type="help">https://t.me/KekikKahve</url>
+  <url type="vcs-browser">https://github.com/keyiflerolsun/BTKSorgu</url>
+  <url type="bugtracker">https://github.com/keyiflerolsun/BTKSorgu/issues</url>
+  <url type="faq">https://blog.keyiflerolsun.dev</url>
 
   <description>
     <p>Is the target website accessible in Turkey? (BTK)</p>
@@ -37,6 +41,13 @@
   </categories>
 
   <releases>
+    <release version="1.1.5" date="2023-5-19">
+      <description>
+        <p>
+          Çeşitli hatalar giderildi..
+        </p>
+      </description>
+    </release>
     <release version="1.1.4" date="2023-5-18">
       <description>
         <p>

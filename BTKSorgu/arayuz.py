@@ -46,6 +46,9 @@ def input_alanlari():
 
 def ara_buton_tiklaninca():
     arama_sorgusu = kekik.pencere.arama_metni.get()
+    if not arama_sorgusu:
+        return False
+
     kekik.pencere.arama_metni.state(["!invalid"])
 
     kekik.pencere.cikti_frame = ttk.Frame(kekik.pencere, padding=(0, 0, 0, 10))

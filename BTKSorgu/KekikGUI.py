@@ -20,6 +20,7 @@ class KekikGUI(tk.Tk):
         self.bind("<Escape>",    lambda event: self.pencereyi_kapat()) # * ESC ile çıkış
         self.bind("<F11>",       lambda event: self.tam_ekran())       # * Tam Ekran
         self.bind("<Control-a>", lambda event: self.ctrl_a(event))
+        self.bind("<Control-A>", lambda event: self.ctrl_a(event))
 
         # ? Pencere İkonu
         logo_b64 = encodebytes(open(logo_yolu, "rb").read())
