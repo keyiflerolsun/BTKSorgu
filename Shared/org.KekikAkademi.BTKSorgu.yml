@@ -23,6 +23,20 @@ finish-args:
   # ! tesseract Erişim
   - --env=TESSDATA_PREFIX=/app/share/tessdata
 
+# ! tesseract Çöpü Temizle
+cleanup:
+  - /sbin
+  - /include
+  - /lib/cmake
+  - /lib/pkgconfig
+  - /bin/protoc
+  - /share/doc
+  - /share/pkgconfig
+  - /share/man
+  - /share/cmake*
+  - "*.a"
+  - "*.la"
+
 modules:
 - SRC/tesseract.yaml
 - SRC/python3-tkinter.yaml

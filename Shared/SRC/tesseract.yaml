@@ -2,19 +2,6 @@
 name: tesseract
 buildsystem: simple
 build-commands: []
-cleanup:
-  - /sbin
-  - /include
-  - /lib/cmake
-  - /lib/pkgconfig
-  - /bin/protoc
-  - /share/doc
-  - /share/pkgconfig
-  - /share/man
-  - /share/cmake*
-  - "*.a"
-  - "*.la"
-
 modules:
   - name: leptonica
     buildsystem: cmake-ninja

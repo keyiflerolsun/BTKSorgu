@@ -2,7 +2,7 @@
 Name=BTKSorgu
 GenericName=BTK Erişim Engel Sorgusu
 Comment=Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu..
-Version=1.1.5
+Version=1.1.7
 Keywords=BTKSorgu;KekikAkademi;keyiflerolsun
 Exec=BTKSorguGUI
 Icon=org.KekikAkademi.BTKSorgu
