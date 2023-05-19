@@ -16,4 +16,4 @@ jobs:
       - name: Güncelleme Kontrol Et
         id  : guncelleme_var_mi
         run : |
-          git diff HEAD^ | grep -q "*"
+          git diff --name-only -r HEAD^1 HEAD
