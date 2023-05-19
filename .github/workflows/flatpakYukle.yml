@@ -59,7 +59,7 @@ jobs:
       - name: Güncelleme Kontrol Et
         id  : guncelleme_var_mi
         run : |
-          if git diff --name-only ${{ github.sha }}^ | grep -q "setup.py"; then echo "degisiklik=true"; else echo "degisiklik=false"; fi >> $GITHUB_STATE
+          if git diff --name-only ${{ github.sha }}^ | grep -q "flatpakYukle.yml"; then echo "degisiklik=true"; else echo "degisiklik=false"; fi >> $GITHUB_STATE
   
       - name: GitHub Release Oluştur
         if  : steps.guncelleme_var_mi.outputs.degisiklik == 'true'
