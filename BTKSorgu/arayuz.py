@@ -1,6 +1,6 @@
 # Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
-from BTKSorgu import KekikGUI
+from BTKSorgu.KekikGUI import KekikGUI
 
 def basla():
     ui = KekikGUI()
