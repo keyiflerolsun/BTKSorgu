@@ -2,11 +2,12 @@
 
 from setuptools import setup
 from io         import open
+from tess_yukle import TesseractYukle
 
 setup(
     # ? Genel Bilgiler
     name         = "BTKSorgu",
-    version      = "1.2.2",
+    version      = "1.2.3",
     url          = "https://github.com/keyiflerolsun/BTKSorgu",
     description  = "Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu",
     keywords     = ["BTKSorgu", "KekikAkademi", "keyiflerolsun"],
@@ -57,5 +58,10 @@ setup(
     # ? PyPI Bilgileri
     long_description_content_type = "text/markdown",
     long_description              = "".join(open("README.md", encoding="utf-8").readlines()),
-    include_package_data          = True
+    include_package_data          = True,
+
+    # ? Dışarıdan Yüklenenler
+    cmdclass = {
+        "install": TesseractYukle
+    }
 )
