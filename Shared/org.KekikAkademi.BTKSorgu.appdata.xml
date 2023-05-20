@@ -41,7 +41,7 @@
   </categories>
 
   <releases>
-    <release version="1.2.4" date="2023-5-20">
+    <release version="1.2.5" date="2023-5-20">
       <description>
         <p>
           `tess_yukle()` fonksiyonu eklendi..

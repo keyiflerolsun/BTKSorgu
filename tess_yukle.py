@@ -41,6 +41,9 @@ class TesseractYukle(install):
                         subprocess.call(["sudo", "pacman", "-Sy"])
                         subprocess.call(["sudo", "pacman", "-S", "--noconfirm", "leptonica"])
                         subprocess.call(["sudo", "pacman", "-S", "--noconfirm", "tesseract"])
+                    case _:
+                        print(distro.id())
+                        self.program_kontrol("tesseract")
 
             case "Windows":
                 subprocess.call(["choco", "install", "-y", "tesseract"])
@@ -48,6 +51,9 @@ class TesseractYukle(install):
             case "Darwin":
                 subprocess.call(["brew", "install", "leptonica"])
                 subprocess.call(["brew", "install", "tesseract"])
+            case _:
+                print(platform.system())
+                self.program_kontrol("tesseract")
 
 
         install.run(self)
