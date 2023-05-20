@@ -1,23 +1,23 @@
-# 🔍 BTKSorgu
+# <a href="#"><img width="32" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/Shared/org.KekikAkademi.BTKSorgu.svg"></a> BTKSorgu
 
-[![Repo Boyutu](https://img.shields.io/github/repo-size/keyiflerolsun/BTKSorgu?logo=git&logoColor=white&label=Depo%20Boyutu)](#)
+[![Boyut](https://img.shields.io/github/repo-size/keyiflerolsun/BTKSorgu?logo=git&logoColor=white&label=Boyut)](#)
 [![Görüntülenme](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/keyiflerolsun/BTKSorgu&title=Görüntülenme)](#)
 <a href="https://KekikAkademi.org/Kahve" target="_blank"><img src="https://img.shields.io/badge/☕️-Kahve Ismarla-ffdd00" title="☕️ Kahve Ismarla" style="padding-left:5px;"></a>
 
-[![Github](https://img.shields.io/github/v/release/keyiflerolsun/BTKSorgu?logo=github&label=GitHub)](https://github.com/keyiflerolsun/BTKSorgu/releases)
-[![PyPI Yükleyici](https://img.shields.io/github/actions/workflow/status/keyiflerolsun/BTKSorgu/pypiYukle.yml?label=PyPi%20Y%C3%BCkleyici&logo=github)](https://github.com/keyiflerolsun/BTKSorgu/actions/workflows/pypiYukle.yml)
+[![GitHub](https://img.shields.io/github/v/release/keyiflerolsun/BTKSorgu?logo=github&label=GitHub)](https://github.com/keyiflerolsun/BTKSorgu/releases)
+[![PyPi Yükleyici](https://img.shields.io/github/actions/workflow/status/keyiflerolsun/BTKSorgu/pypiYukle.yml?label=PyPi%20Y%C3%BCkleyici&logo=github)](https://github.com/keyiflerolsun/BTKSorgu/actions/workflows/pypiYukle.yml)
 [![Flatpak Yükleyici](https://img.shields.io/github/actions/workflow/status/keyiflerolsun/BTKSorgu/flatpakYukle.yml?label=Flatpak%20Y%C3%BCkleyici&logo=github)](https://github.com/keyiflerolsun/BTKSorgu/actions/workflows/flatpakYukle.yml)
 
-[![FlatHub](https://img.shields.io/flathub/v/org.KekikAkademi.BTKSorgu?logo=flathub&logoColor=white)](https://flathub.org/tr/apps/org.KekikAkademi.BTKSorgu)
-[![FlatHub - Downloads](https://img.shields.io/flathub/downloads/org.KekikAkademi.BTKSorgu?logo=flathub&logoColor=white)](https://flathub.org/tr/apps/org.KekikAkademi.BTKSorgu)
+[![FlatHub](https://img.shields.io/flathub/v/org.KekikAkademi.BTKSorgu?logo=flathub&logoColor=white&label=FlatHub)](https://flathub.org/tr/apps/org.KekikAkademi.BTKSorgu)
+[![FlatHub - Yüklenme](https://img.shields.io/flathub/downloads/org.KekikAkademi.BTKSorgu?logo=flathub&logoColor=white&label=Yüklenme)](https://flathub.org/tr/apps/org.KekikAkademi.BTKSorgu)
 
-[![PyPI](https://img.shields.io/pypi/v/BTKSorgu?logo=pypi&logoColor=white)](https://pypi.org/project/BTKSorgu)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/BTKSorgu?logo=pypi&logoColor=white)](https://pypi.org/project/BTKSorgu)
-[![PyPI - Wheel](https://img.shields.io/pypi/wheel/BTKSorgu?logo=pypi&logoColor=white)](https://pypi.org/project/BTKSorgu)
+[![PyPi](https://img.shields.io/pypi/v/BTKSorgu?logo=pypi&logoColor=white&label=PyPi)](https://pypi.org/project/BTKSorgu)
+[![PyPi - Yüklenme](https://img.shields.io/pypi/dm/BTKSorgu?logo=pypi&logoColor=white&label=Yüklenme)](https://pypi.org/project/BTKSorgu)
+[![PyPi - Wheel](https://img.shields.io/pypi/wheel/BTKSorgu?logo=pypi&logoColor=white&label=Wheel)](https://pypi.org/project/BTKSorgu)
 
-[![Python Version](https://img.shields.io/pypi/pyversions/BTKSorgu?logo=python&logoColor=white)](#)
-[![License](https://img.shields.io/pypi/l/BTKSorgu?logo=gnu&logoColor=white)](#)
-[![Status](https://img.shields.io/pypi/status/BTKSorgu?logo=windowsterminal&logoColor=white)](#)
+[![Python Version](https://img.shields.io/pypi/pyversions/BTKSorgu?logo=python&logoColor=white&label=Python)](#)
+[![Lisans](https://img.shields.io/pypi/l/BTKSorgu?logo=gnu&logoColor=white&label=Lisans)](#)
+[![Durum](https://img.shields.io/pypi/status/BTKSorgu?logo=windowsterminal&logoColor=white&label=Durum)](#)
 
 *Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu..*
 
