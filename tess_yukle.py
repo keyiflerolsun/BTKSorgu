@@ -1,76 +1,63 @@
 # Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
-from contextlib  import suppress
 import platform, sys, subprocess
 from setuptools.command.install import install
 
 class TesseractYukle(install):
-    def program_kontrol(self, program):
-        try:
-            subprocess.check_output([program, "--version"])
-        except Exception as hata:
-            raise RuntimeError(f"\n\n» '{program}' yüklü değil!\n\n") from hata
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.sistem = platform.system()
 
-    def gereksinim_kontrol(self):
-        match platform.system():
-            case "Linux":
-                self.program_kontrol("tesseract")
-            case "Windows":
-                self.program_kontrol("tesseract")
-            case "Darwin":
-                self.program_kontrol("tesseract")
+    def tess_yuklu_mu(self):
+        try:
+            subprocess.check_output(["tesseract", "--version"])
+            return True
+        except Exception:
+            return False
+
+    def tess_yukle(self):
+        if self.sistem != "Linux":
+            raise OSError(f"\n\n» Bu paketi kullanabilmek için '{self.sistem}' cihazına 'tesseract-ocr' yüklemelisin!\n")
+
+        print("\n\n» 'tesseract-ocr' yüklenmeye çalışılıyor...\n")
+
+        try:
+            import distro
+        except ImportError:
+            subprocess.run([sys.executable, "-m", "pip", "install", "distro"])
+            try:
+                import distro
+            except ImportError:
+                print("» 'distro' kütüphanesi yüklenemedi!\n")
+                sys.exit(1)
+
+        match distro.id():
+            case "debian" | "ubuntu":
+                subprocess.run(["sudo", "apt-get", "update"])
+                subprocess.run(["sudo", "apt-get", "install", "-y", "libleptonica-dev"])
+                subprocess.run(["sudo", "apt-get", "install", "-y", "tesseract-ocr"])
+            case "fedora":
+                subprocess.run(["sudo", "dnf", "install", "-y", "leptonica-devel"])
+                subprocess.run(["sudo", "dnf", "install", "-y", "tesseract"])
+            case "centos" | "rhel" | "rocky" | "redhat":
+                subprocess.run(["sudo", "yum", "install", "-y", "leptonica-devel"])
+                subprocess.run(["sudo", "yum", "install", "-y", "tesseract"])
+            case "arch" | "manjaro":
+                subprocess.run(["sudo", "pacman", "-Sy"])
+                subprocess.run(["sudo", "pacman", "-S", "--noconfirm", "leptonica"])
+                subprocess.run(["sudo", "pacman", "-S", "--noconfirm", "tesseract"])
             case bilinmeyen:
-                raise OSError(f"\n\n» Bilinmeyen işletim sistemi : `{bilinmeyen}`\n\n")
+                print(f"\n\n» Bilinmeyen dağıtım : `{bilinmeyen}`\n\n")
+
+        if not self.tess_yuklu_mu():
+            raise RuntimeError("» 'tesseract-ocr' yüklenemedi!\n")
 
     def run(self):
-        with suppress(Exception):
-            self.gereksinim_kontrol()
-            return super().run()
-
-        match platform.system():
-            case "Linux":
-                try:
-                    import distro
-                except ImportError:
-                    subprocess.call([sys.executable, "-m", "pip", "install", "distro"])
-                    try:
-                        import distro
-                    except ImportError:
-                        print("\n\n» 'distro' kütüphanesi yüklenemedi!\n\n")
-                        exit()
-
-                match distro.id():
-                    case "debian" | "ubuntu":
-                        subprocess.call(["sudo", "apt-get", "update"])
-                        subprocess.call(["sudo", "apt-get", "install", "-y", "libleptonica-dev"])
-                        subprocess.call(["sudo", "apt-get", "install", "-y", "tesseract-ocr"])
-                    case "fedora":
-                        subprocess.call(["sudo", "dnf", "install", "-y", "leptonica-devel"])
-                        subprocess.call(["sudo", "dnf", "install", "-y", "tesseract"])
-                    case "centos" | "rhel" | "rocky" | "redhat":
-                        subprocess.call(["sudo", "yum", "install", "-y", "leptonica-devel"])
-                        subprocess.call(["sudo", "yum", "install", "-y", "tesseract"])
-                    case "arch" | "manjaro":
-                        subprocess.call(["sudo", "pacman", "-Sy"])
-                        subprocess.call(["sudo", "pacman", "-S", "--noconfirm", "leptonica"])
-                        subprocess.call(["sudo", "pacman", "-S", "--noconfirm", "tesseract"])
-                    case bilinmeyen:
-                        print(f"\n\n» Bilinmeyen dağıtım : `{bilinmeyen}`\n\n")
-
-            case "Windows":
-                subprocess.call(["choco", "install", "-y", "tesseract"])
-
-            case "Darwin":
-                subprocess.call(["brew", "install", "leptonica"])
-                subprocess.call(["brew", "install", "tesseract"])
-
-            case bilinmeyen:
-                print(f"\n\n» Bilinmeyen işletim sistemi : `{bilinmeyen}`\n\n")
-
-        install.run(self)
-
         try:
-            self.gereksinim_kontrol()
+            if not self.tess_yuklu_mu():
+                self.tess_yukle()
         except Exception as hata:
             print(hata)
-            exit()
+            sys.exit(1)
+
+        install.run(self)
