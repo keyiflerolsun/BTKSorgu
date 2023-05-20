@@ -2,12 +2,11 @@
 
 from setuptools import setup
 from io         import open
-from tess_yukle import TesseractYukle
 
 setup(
     # ? Genel Bilgiler
     name         = "BTKSorgu",
-    version      = "1.2.9",
+    version      = "1.3.0",
     url          = "https://github.com/keyiflerolsun/BTKSorgu",
     description  = "Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu",
     keywords     = ["BTKSorgu", "KekikAkademi", "keyiflerolsun"],
@@ -39,11 +38,6 @@ setup(
         "sv_ttk"
     ],
 
-    # ? Dışarıdan Yüklenenler
-    cmdclass = {
-        "install" : TesseractYukle
-    },
-
     # ? Konsoldan Çalıştırılabilir
     entry_points = {
         "console_scripts": [
@@ -55,8 +49,8 @@ setup(
     # ? Masaüstü Paketi
     setup_requires = ["install_freedesktop"],
     data_files     = [
-        ("share/applications",                ["Shared/org.KekikAkademi.BTKSorgu.desktop"]),
         ("share/appdata",                     ["Shared/org.KekikAkademi.BTKSorgu.appdata.xml"]),
+        ("share/applications",                ["Shared/org.KekikAkademi.BTKSorgu.desktop"]),
         ("share/icons/hicolor/scalable/apps", ["Shared/org.KekikAkademi.BTKSorgu.svg"])
     ],
 

@@ -5,15 +5,15 @@
 <a href="https://KekikAkademi.org/Kahve" target="_blank"><img src="https://img.shields.io/badge/☕️-Kahve Ismarla-ffdd00" title="☕️ Kahve Ismarla" style="padding-left:5px;"></a>
 
 [![GitHub](https://img.shields.io/github/v/release/keyiflerolsun/BTKSorgu?logo=github&label=GitHub)](https://github.com/keyiflerolsun/BTKSorgu/releases)
-[![PyPi Yükleyici](https://img.shields.io/github/actions/workflow/status/keyiflerolsun/BTKSorgu/pypiYukle.yml?label=PyPi%20Y%C3%BCkleyici&logo=github)](https://github.com/keyiflerolsun/BTKSorgu/actions/workflows/pypiYukle.yml)
+[![PyPI Yükleyici](https://img.shields.io/github/actions/workflow/status/keyiflerolsun/BTKSorgu/pypiYukle.yml?label=PyPI%20Y%C3%BCkleyici&logo=github)](https://github.com/keyiflerolsun/BTKSorgu/actions/workflows/pypiYukle.yml)
 [![Flatpak Yükleyici](https://img.shields.io/github/actions/workflow/status/keyiflerolsun/BTKSorgu/flatpakYukle.yml?label=Flatpak%20Y%C3%BCkleyici&logo=github)](https://github.com/keyiflerolsun/BTKSorgu/actions/workflows/flatpakYukle.yml)
 
 [![FlatHub](https://img.shields.io/flathub/v/org.KekikAkademi.BTKSorgu?logo=flathub&logoColor=white&label=FlatHub)](https://flathub.org/tr/apps/org.KekikAkademi.BTKSorgu)
 [![FlatHub - Yüklenme](https://img.shields.io/flathub/downloads/org.KekikAkademi.BTKSorgu?logo=flathub&logoColor=white&label=Yüklenme)](https://flathub.org/tr/apps/org.KekikAkademi.BTKSorgu)
 
-[![PyPi](https://img.shields.io/pypi/v/BTKSorgu?logo=pypi&logoColor=white&label=PyPi)](https://pypi.org/project/BTKSorgu)
-[![PyPi - Yüklenme](https://img.shields.io/pypi/dm/BTKSorgu?logo=pypi&logoColor=white&label=Yüklenme)](https://pypi.org/project/BTKSorgu)
-[![PyPi - Wheel](https://img.shields.io/pypi/wheel/BTKSorgu?logo=pypi&logoColor=white&label=Wheel)](https://pypi.org/project/BTKSorgu)
+[![PyPI](https://img.shields.io/pypi/v/BTKSorgu?logo=pypi&logoColor=white&label=PyPI)](https://pypi.org/project/BTKSorgu)
+[![PyPI - Yüklenme](https://img.shields.io/pypi/dm/BTKSorgu?logo=pypi&logoColor=white&label=Yüklenme)](https://pypi.org/project/BTKSorgu)
+[![PyPI - Wheel](https://img.shields.io/pypi/wheel/BTKSorgu?logo=pypi&logoColor=white&label=Wheel)](https://pypi.org/project/BTKSorgu)
 
 [![Python Version](https://img.shields.io/pypi/pyversions/BTKSorgu?logo=python&logoColor=white&label=Python)](#)
 [![Lisans](https://img.shields.io/pypi/l/BTKSorgu?logo=gnu&logoColor=white&label=Lisans)](#)
@@ -28,7 +28,7 @@
 
 ## 🚀 Kurulum
 
-### <a href="#"><img width="16" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/pypi.svg"></a> PyPi (Lib - CLI - UI)
+### <a href="#"><img width="16" src="https://raw.githubusercontent.com/keyiflerolsun/BTKSorgu/main/.github/icons/pypi.svg"></a> PyPI (Lib - CLI - UI)
 
 ```bash
 # Yüklemek
@@ -104,7 +104,7 @@ https://github.com/keyiflerolsun/BTKSorgu.git
 cd BTKSorgu
 
 # Gerekli Ortamları Kur
-pip install -U pip setuptools wheel twine
+pip install -U pip setuptools wheel
 
 # Paketi Yükle
 pip install .
@@ -172,8 +172,9 @@ flatpak uninstall org.KekikAkademi.BTKSorgu
 
 - ✅ **[@raifpy](https://github.com/raifpy)** *tarafından kodlanmış projenin hantal bir bileşeni itinayla `dızz 🐍`'lanmıştır..*
 - ✅ **Selenium** *bağımlılığından dolayı hantal çalışan kod yapısı tamamen ayıklanıp bütün iş* `requests`*'e yaptırılıp ciddi miktarda kaynak ve zaman tasarrufu ettirilmiştir..*
-- ✅ *Kolay erişilebilir olması ve ilham yaratması için* **pypi** *depolarına yüklenmiştir..*
+- ✅ *Kolay erişilebilir olması ve ilham yaratması için* **PyPI** *depolarına yüklenmiştir..*
 - ✅ **Tkinter** *ile basit bir arayüz tasarlanmıştır ve eğitim amacıyla Depolara yüklenmiştir..*
+- ✅ *İlham yaratması için* **FlatHub** *depolarına yüklenmiştir..*
 
 ## 🌐 Telif Hakkı ve Lisans
 

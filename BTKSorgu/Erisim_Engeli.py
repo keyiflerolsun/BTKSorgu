@@ -1,5 +1,11 @@
 # Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
+from rich         import pretty, traceback
+from rich.console import Console
+pretty.install()
+traceback.install(show_locals=False)
+konsol = Console(log_path=False)
+
 from requests import Session
 from parsel   import Selector
 
@@ -19,9 +25,8 @@ class BTKSorgu(object):
         (str):
             {domain}, {karar} Karar Bulunamadı.
     """
-    def __init__(self, sorgu_url:str, arka_plan:bool=False):
+    def __init__(self, sorgu_url:str):
         """Karar Döndürür"""
-        self.arka_plan      = arka_plan
         self.ana_sayfa      = "https://internet2.btk.gov.tr"
         self.sorgu_sayfasi  = "https://internet2.btk.gov.tr/sitesorgu/"
         self.sorgu_url      = search(r"(?:https?://)?(?:www\.)?([^/]+)", sorgu_url).group(1)
@@ -29,8 +34,7 @@ class BTKSorgu(object):
 
         self.oturum = Session()
 
-    @property
-    def captcha_ver(self):
+    def __captcha_ver(self):
         """Captcha görselini indirip OCR ile okur"""
         ilk_bakis    = self.oturum.get(self.sorgu_sayfasi, allow_redirects=True)
         captcha_yolu = Selector(ilk_bakis.text).xpath("//div[@class='arama_captcha']/img/@src").get()
@@ -39,12 +43,19 @@ class BTKSorgu(object):
         with open(self._gecici_gorsel, "wb") as captcha_gorsel:
             copyfileobj(captcha_data.raw, captcha_gorsel)
 
-        return image_to_string(Image.open(self._gecici_gorsel)).strip().replace(" ", "")
+        try:
+            captcha_harfleri = image_to_string(Image.open(self._gecici_gorsel)).strip().replace(" ", "")
+        except Exception as hata:
+            konsol.print(f"[bold red]Hata: {hata}\n\n")
+            return None
 
-    @property
-    def karar(self):
+        return captcha_harfleri
+
+    def karar_ver(self):
         """Captcha ile birlikte sorgu sitesini POST eder"""
-        captcha = self.captcha_ver
+        captcha = self.__captcha_ver()
+        if not captcha:
+            return "Muhtemelen Sisteminizde 'tesseract-ocr' Yüklü Değil!"
 
         karar_sayfasi = self.oturum.post(
             url     = self.sorgu_sayfasi,
@@ -71,23 +82,14 @@ class BTKSorgu(object):
         hatali_kod = secici.xpath("//div[@class='icerik']/ul/li/text()").get()
         erisim_var = secici.xpath("//div[@class='yazi2']/text()").get()
         erisim_yok = secici.xpath("//span[@class='yazi2_2']/text()").get()
-        karar      = hatali_kod or erisim_var or erisim_yok or ""
 
-        if self.arka_plan:
-            print(f"""
-
-            # Sorgu   : {self.sorgu_url}
-            # Captcha : {captcha}
-            # Karar   : {karar}
-
-""")
-        return karar
+        return hatali_kod or erisim_var or erisim_yok or ""
 
     def __repr__(self) -> str:
         """Kararı Döndürür"""
         hatalar = ["Lütfen güvenlik kodunu giriniz.", "Güvenlik kodunu yanlış girdiniz. Lütfen Güvenlik Kodunu resimde gördüğünüz şekilde giriniz."]
         while True:
-            karar = self.karar
+            karar = self.karar_ver()
             if karar not in hatalar:
                 remove(self._gecici_gorsel)
                 return karar
