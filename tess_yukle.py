@@ -28,19 +28,19 @@ class TesseractYukle(install):
 
                 match distro.id():
                     case "debian" | "ubuntu":
-                        subprocess.call(["apt-get", "update"])
-                        subprocess.call(["apt-get", "install", "-y", "libleptonica-dev"])
-                        subprocess.call(["apt-get", "install", "-y", "tesseract-ocr"])
+                        subprocess.call(["sudo", "apt-get", "update"])
+                        subprocess.call(["sudo", "apt-get", "install", "-y", "libleptonica-dev"])
+                        subprocess.call(["sudo", "apt-get", "install", "-y", "tesseract-ocr"])
                     case "fedora":
-                        subprocess.call(["dnf", "install", "-y", "leptonica-devel"])
-                        subprocess.call(["dnf", "install", "-y", "tesseract"])
+                        subprocess.call(["sudo", "dnf", "install", "-y", "leptonica-devel"])
+                        subprocess.call(["sudo", "dnf", "install", "-y", "tesseract"])
                     case "centos" | "rhel" | "rocky" | "redhat":
-                        subprocess.call(["yum", "install", "-y", "leptonica-devel"])
-                        subprocess.call(["yum", "install", "-y", "tesseract"])
+                        subprocess.call(["sudo", "yum", "install", "-y", "leptonica-devel"])
+                        subprocess.call(["sudo", "yum", "install", "-y", "tesseract"])
                     case "arch" | "manjaro":
-                        subprocess.call(["pacman", "-Sy"])
-                        subprocess.call(["pacman", "-S", "--noconfirm", "leptonica"])
-                        subprocess.call(["pacman", "-S", "--noconfirm", "tesseract"])
+                        subprocess.call(["sudo", "pacman", "-Sy"])
+                        subprocess.call(["sudo", "pacman", "-S", "--noconfirm", "leptonica"])
+                        subprocess.call(["sudo", "pacman", "-S", "--noconfirm", "tesseract"])
 
             case "Windows":
                 subprocess.call(["choco", "install", "-y", "tesseract"])

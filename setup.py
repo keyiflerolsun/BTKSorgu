@@ -62,6 +62,6 @@ setup(
 
     # ? Dışarıdan Yüklenenler
     cmdclass = {
-        "install": TesseractYukle
+        "install" : TesseractYukle
     }
 )
