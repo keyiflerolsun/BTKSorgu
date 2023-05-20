@@ -1,12 +1,11 @@
 # Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
-import tkinter as tk
-from tkinter  import ttk, messagebox
-from base64   import encodebytes
-from sv_ttk   import set_theme
-from BTKSorgu import BTKSorgu
-
-from BTKSorgu.ekstra import dosya_ver
+import tkinter     as tk
+from tkinter       import ttk, messagebox
+from base64        import encodebytes
+from sv_ttk        import set_theme
+from BTKSorgu      import BTKSorgu
+from BTKSorgu.Libs import dosya_ver
 
 
 class KekikGUI(tk.Tk):
@@ -15,7 +14,7 @@ class KekikGUI(tk.Tk):
         set_theme("dark")
         self.title("BTK Sorgu")
 
-        logo_b64 = encodebytes(open(file=dosya_ver("logo.png", 1), mode="rb").read())
+        logo_b64 = encodebytes(open(file=dosya_ver("logo.png", ust_dizin=2), mode="rb").read())
         favicon  = tk.PhotoImage(data=logo_b64)
         self.iconphoto(False, favicon)
 
