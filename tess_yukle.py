@@ -4,14 +4,20 @@ import platform, sys, subprocess
 from setuptools.command.install import install
 
 class TesseractYukle(install):
-    def gereksinimler(self):
-        match platform.system():
-            case "Linux":
-                self.program_kontrol("tesseract")
-            case "Windows":
-                self.program_kontrol("tesseract")
-            case "Darwin":
-                self.program_kontrol("tesseract")
+    def gereksinim_kontrol(self):
+        try:
+            match platform.system():
+                case "Linux":
+                    self.program_kontrol("tesseract")
+                case "Windows":
+                    self.program_kontrol("tesseract")
+                case "Darwin":
+                    self.program_kontrol("tesseract")
+                case _:
+                    raise OSError(f"\n\n» Bilinmeyen işletim sistemi : `{platform.system()}`\n\n")
+        except Exception as hata:
+            print(hata)
+            exit()
 
     def run(self):
         match platform.system():
@@ -43,7 +49,6 @@ class TesseractYukle(install):
                         subprocess.call(["sudo", "pacman", "-S", "--noconfirm", "tesseract"])
                     case _:
                         print(distro.id())
-                        self.program_kontrol("tesseract")
 
             case "Windows":
                 subprocess.call(["choco", "install", "-y", "tesseract"])
@@ -53,20 +58,14 @@ class TesseractYukle(install):
                 subprocess.call(["brew", "install", "tesseract"])
             case _:
                 print(platform.system())
-                self.program_kontrol("tesseract")
 
 
         install.run(self)
+        self.gereksinim_kontrol()
 
-
-        try:
-            self.gereksinimler()
-        except RuntimeError as hata:
-            print(hata)
-            exit()
 
     def program_kontrol(self, program):
         try:
             subprocess.check_output([program, "--version"])
-        except (OSError, subprocess.CalledProcessError) as hata:
+        except Exception as hata:
             raise RuntimeError(f"\n\n» '{program}' yüklü değil!\n\n") from hata
