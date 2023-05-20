@@ -7,7 +7,7 @@ from tess_yukle import TesseractYukle
 setup(
     # ? Genel Bilgiler
     name         = "BTKSorgu",
-    version      = "1.2.7",
+    version      = "1.2.8",
     url          = "https://github.com/keyiflerolsun/BTKSorgu",
     description  = "Hedef websitesinin BTK Tarafından Erişim Engeli Sorgusu",
     keywords     = ["BTKSorgu", "KekikAkademi", "keyiflerolsun"],

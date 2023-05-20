@@ -1,5 +1,6 @@
 # Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
+from contextlib  import suppress
 import platform, sys, subprocess
 from setuptools.command.install import install
 
@@ -22,6 +23,10 @@ class TesseractYukle(install):
                 raise OSError(f"\n\n» Bilinmeyen işletim sistemi : `{bilinmeyen}`\n\n")
 
     def run(self):
+        with suppress(Exception):
+            self.gereksinim_kontrol()
+            return super().run()
+
         match platform.system():
             case "Linux":
                 try:
@@ -62,12 +67,10 @@ class TesseractYukle(install):
             case bilinmeyen:
                 print(f"\n\n» Bilinmeyen işletim sistemi : `{bilinmeyen}`\n\n")
 
+        install.run(self)
+
         try:
             self.gereksinim_kontrol()
-        except Exception:
-            install.run(self)
-            try:
-                self.gereksinim_kontrol()
-            except Exception as hata:
-                print(hata)
-                exit()
+        except Exception as hata:
+            print(hata)
+            exit()
