@@ -1,9 +1,6 @@
 # Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
-from rich         import pretty, traceback
 from rich.console import Console
-pretty.install()
-traceback.install(show_locals=False)
 konsol = Console(log_path=False)
 
 import os
