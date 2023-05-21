@@ -1,5 +1,6 @@
 install-freedesktop
 rich
+Pygments
 requests
 parsel
 cssselect

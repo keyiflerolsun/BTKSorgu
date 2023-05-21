@@ -14,7 +14,7 @@ class KekikGUI(tk.Tk):
         set_theme("dark")
         self.title("BTK Sorgu")
 
-        logo_b64 = encodebytes(open(file=dosya_ver("logo.png", ust_dizin=2), mode="rb").read())
+        logo_b64 = encodebytes(open(file=dosya_ver("Assets/logo.png", ust_dizin=2), mode="rb").read())
         favicon  = tk.PhotoImage(data=logo_b64)
         self.iconphoto(False, favicon)
 
