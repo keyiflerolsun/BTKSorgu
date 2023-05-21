@@ -1,11 +1,11 @@
 # Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
-import tkinter     as tk
-from tkinter       import ttk, messagebox
-from base64        import encodebytes
-from sv_ttk        import set_theme
-from BTKSorgu      import BTKSorgu
-from BTKSorgu.Libs import dosya_ver
+import tkinter as tk
+from tkinter   import ttk, messagebox
+from base64    import encodebytes
+from sv_ttk    import set_theme
+from BTKSorgu  import BTKSorgu
+from ..Libs    import dosya_ver
 
 
 class KekikGUI(tk.Tk):

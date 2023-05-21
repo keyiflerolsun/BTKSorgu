@@ -1,8 +1,8 @@
 # Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
-from BTKSorgu      import BTKSorgu
-from BTKSorgu.Libs import konsol
-from sys           import argv
+from BTKSorgu import BTKSorgu
+from .Libs    import konsol
+from sys      import argv
 
 def basla():
     print()
