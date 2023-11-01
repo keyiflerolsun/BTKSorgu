@@ -23,8 +23,8 @@ class BTKSorgu(object):
     """
     def __init__(self, sorgu_url:str):
         """Karar Döndürür"""
-        self.ana_sayfa      = "https://internet2.btk.gov.tr"
-        self.sorgu_sayfasi  = "https://internet2.btk.gov.tr/sitesorgu/"
+        self.ana_sayfa      = "https://internet.btk.gov.tr"
+        self.sorgu_sayfasi  = "https://internet.btk.gov.tr/sitesorgu/"
         self.sorgu_url      = search(r"(?:https?://)?(?:www\.)?([^/]+)", sorgu_url).group(1)
         self._gecici_gorsel = "captcha.png"
 
@@ -57,7 +57,7 @@ class BTKSorgu(object):
             url     = self.sorgu_sayfasi,
             headers = {
                 "Content-Type" : "application/x-www-form-urlencoded",
-                "Host"         : "internet2.btk.gov.tr",
+                "Host"         : "internet.btk.gov.tr",
                 "Origin"       : self.ana_sayfa,
                 "Referer"      : self.sorgu_sayfasi,
             },
